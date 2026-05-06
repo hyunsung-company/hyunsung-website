@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: 'ko'
+
+collections:
+  - name: "settings"
+    label: "사이트 기본 설정"
+    files:
+      - label: "회사 정보"
+        name: "company"
+        file: "content/company.json"
+        fields:
+          - { label: "회사명 (한글)", name: "name_kr", widget: "string", default: "현성기업" }
+          - { label: "회사명 (영문)", name: "name_en", widget: "string", default: "HYUN SUNG" }
+          - { label: "대표자명", name: "ceo", widget: "string", default: "최석림" }
+          - { label: "전화번호", name: "tel", widget: "string", default: "055-345-0082" }
+          - { label: "FAX", name: "fax", widget: "string", default: "055-345-0084" }
+          - { label: "이메일", name: "email", widget: "string", default: "hskiup@naver.com" }
+          - { label: "주소", name: "address", widget: "string", default: "경상남도 김해시 진례면 고모로180번길 47-36" }
+          - { label: "사업자번호", name: "bizno", widget: "string", default: "606-81-14505" }
+          - { label: "메인 슬로건", name: "slogan", widget: "string", default: "철도차량, 제철설비, 선박부품 및 산업기계를 전문적으로 생산합니다." }
+
+  - name: "products"
+    label: "제품 관리"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "제품명", name: "title", widget: "string" }
+      - { label: "카테고리", name: "category", widget: "select", options: ["철도차량 외관부품", "철도차량 자체부품", "산업 플랜트"] }
+      - { label: "대표 이미지", name: "image", widget: "image", required: false }
+      - { label: "설명", name: "description", widget: "text" }
+      - { label: "순서", name: "order", widget: "number", default: 1 }
+
+  - name: "equipment"
+    label: "장비 관리"
+    folder: "content/equipment"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "장비명", name: "title", widget: "string" }
+      - { label: "종류", name: "type", widget: "select", options: ["프레스", "레이저", "용접 및 기타"] }
+      - { label: "대표 이미지", name: "image", widget: "image", required: false }
+      - { label: "설명", name: "description", widget: "text" }
+
+  - name: "gallery"
+    label: "사진 갤러리"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "사진", name: "image", widget: "image" }
+      - { label: "설명", name: "caption", widget: "string", required: false }
