@@ -5,3 +5,23 @@
   from = "/admin"
   to = "/admin/index.html"
   status = 200
+
+# 사이버신문고 폼 제출 시 이메일 알림
+[[forms]]
+  name = "cyber-report"
+
+[[forms.notifications]]
+  type = "email"
+  to = "idoun98@hskiup.co.kr"
+  from = "noreply@cheery-druid-be970d.netlify.app"
+  subject = "[현성기업 사이버신문고] 새로운 제보가 접수되었습니다"
+
+# 문의 폼
+[[forms]]
+  name = "contact"
+
+[[forms.notifications]]
+  type = "email"
+  to = "idoun98@hskiup.co.kr"
+  from = "noreply@cheery-druid-be970d.netlify.app"
+  subject = "[현성기업] 새로운 문의가 접수되었습니다"
