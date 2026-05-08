@@ -175,3 +175,19 @@ collections:
           - { label: "복리후생 내용", name: "benefits", widget: "text" }
           - { label: "지원 이메일", name: "apply_email", widget: "string", default: "hs@hskiup.co.kr" }
           - { label: "지원 전화", name: "apply_tel", widget: "string", default: "055-345-0082" }
+
+  - name: "orgchart"
+    label: "🏛️ 조직구성"
+    files:
+      - label: "조직도 설명"
+        name: "org"
+        file: "content/org.json"
+        fields:
+          - { label: "페이지 부제목", name: "subtitle", widget: "string", default: "고객 가치실현을 목표로 최고의 팀워크와 창의력으로 꾸준하게 노력하는 기업" }
+          - label: "부서 목록"
+            name: "departments"
+            widget: "list"
+            fields:
+              - { label: "부서명", name: "name", widget: "string" }
+              - { label: "상위 부서", name: "parent", widget: "string", required: false }
+              - { label: "하위 팀", name: "teams", widget: "string", hint: "쉼표로 구분 (예: 영업, 총무·자재)" }
