@@ -15,20 +15,9 @@ collections:
         name: "main"
         file: "content/main.json"
         fields:
-          - { label: "태그라인", name: "tagline", widget: "string" }
-          - { label: "부제목", name: "subtitle", widget: "text" }
-
-  - name: "slider"
-    label: "🖼️ 메인 슬라이드 사진"
-    files:
-      - label: "슬라이드 사진"
-        name: "slides"
-        file: "content/slides.json"
-        fields:
-          - { label: "슬라이드 1", name: "slide1", widget: "image", required: false }
-          - { label: "슬라이드 2", name: "slide2", widget: "image", required: false }
-          - { label: "슬라이드 3", name: "slide3", widget: "image", required: false }
-          - { label: "전환 속도 (초)", name: "interval", widget: "number", default: 3, value_type: "int", min: 2, max: 10 }
+          - { label: "메인 태그라인", name: "tagline", widget: "string" }
+          - { label: "메인 부제목", name: "subtitle", widget: "text" }
+          - { label: "메인 배경 이미지", name: "hero_image", widget: "image", required: false }
 
   - name: "company"
     label: "🏢 회사소개"
@@ -38,7 +27,7 @@ collections:
         file: "content/greeting.json"
         fields:
           - { label: "대표이사 사진", name: "ceo_image", widget: "image", required: false }
-          - { label: "인사말 제목", name: "quote", widget: "string" }
+          - { label: "대표 인사말 제목", name: "quote", widget: "string" }
           - { label: "인사말 내용 1", name: "content1", widget: "text" }
           - { label: "인사말 내용 2", name: "content2", widget: "text" }
       - label: "주요인증서현황"
@@ -51,7 +40,7 @@ collections:
             fields:
               - { label: "인증명", name: "title", widget: "string" }
               - { label: "설명", name: "desc", widget: "text" }
-              - { label: "이미지", name: "image", widget: "image", required: false }
+              - { label: "인증서 이미지", name: "image", widget: "image", required: false }
       - label: "연혁"
         name: "history"
         file: "content/history.json"
@@ -65,78 +54,82 @@ collections:
               - { label: "내용", name: "content", widget: "string" }
 
   - name: "products"
-    label: "🔧 제품 사진 관리"
+    label: "🔧 제품 관리"
     files:
-      - label: "철도차량 부품 사진"
-        name: "rail_photos"
-        file: "content/photos-rail.json"
+      - label: "철도차량 부품"
+        name: "rail"
+        file: "content/product-rail.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록 (최대 50장 이상 추가 가능)"
-            name: "photos"
+          - { label: "이미지 1", name: "image1", widget: "image", required: false }
+          - { label: "이미지 2", name: "image2", widget: "image", required: false }
+          - { label: "이미지 3", name: "image3", widget: "image", required: false }
+          - label: "제품 항목"
+            name: "items"
             widget: "list"
             fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "제품명/설명", name: "caption", widget: "string", required: false }
-      - label: "방산 부품 사진"
-        name: "defense_photos"
-        file: "content/photos-defense.json"
+              - { label: "제품명", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "이미지", name: "image", widget: "image", required: false }
+      - label: "방산 부품"
+        name: "defense"
+        file: "content/product-defense.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록 (최대 50장 이상 추가 가능)"
-            name: "photos"
+          - { label: "이미지 1", name: "image1", widget: "image", required: false }
+          - { label: "이미지 2", name: "image2", widget: "image", required: false }
+          - label: "제품 항목"
+            name: "items"
             widget: "list"
             fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "제품명/설명", name: "caption", widget: "string", required: false }
-      - label: "산업플랜트 사진"
-        name: "plant_photos"
-        file: "content/photos-plant.json"
+              - { label: "제품명", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "이미지", name: "image", widget: "image", required: false }
+      - label: "산업플랜트"
+        name: "plant"
+        file: "content/product-plant.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록 (최대 50장 이상 추가 가능)"
-            name: "photos"
+          - { label: "이미지 1", name: "image1", widget: "image", required: false }
+          - { label: "이미지 2", name: "image2", widget: "image", required: false }
+          - label: "제품 항목"
+            name: "items"
             widget: "list"
             fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "제품명/설명", name: "caption", widget: "string", required: false }
+              - { label: "제품명", name: "title", widget: "string" }
+              - { label: "설명", name: "desc", widget: "text" }
+              - { label: "이미지", name: "image", widget: "image", required: false }
 
-  - name: "equipment_photos"
-    label: "⚙️ 장비 사진 관리"
+  - name: "equipment_mgmt"
+    label: "⚙️ 장비 관리"
     files:
-      - label: "프레스 사진"
-        name: "press_photos"
-        file: "content/photos-press.json"
+      - label: "프레스"
+        name: "press"
+        file: "content/equipment-press.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록 (최대 50장 이상 추가 가능)"
-            name: "photos"
+          - { label: "장비 이미지 1", name: "image1", widget: "image", required: false }
+          - { label: "장비 이미지 2", name: "image2", widget: "image", required: false }
+          - label: "장비 스펙"
+            name: "specs"
             widget: "list"
             fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "장비명/설명", name: "caption", widget: "string", required: false }
-      - label: "레이저 사진"
-        name: "laser_photos"
-        file: "content/photos-laser.json"
+              - { label: "항목", name: "label", widget: "string" }
+              - { label: "내용", name: "value", widget: "string" }
+      - label: "레이저"
+        name: "laser"
+        file: "content/equipment-laser.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록 (최대 50장 이상 추가 가능)"
-            name: "photos"
-            widget: "list"
-            fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "장비명/설명", name: "caption", widget: "string", required: false }
-      - label: "용접 및 기타장비 사진"
-        name: "welding_photos"
-        file: "content/photos-welding.json"
+          - { label: "장비 이미지 1", name: "image1", widget: "image", required: false }
+          - { label: "장비 이미지 2", name: "image2", widget: "image", required: false }
+      - label: "용접 및 기타장비"
+        name: "welding"
+        file: "content/equipment-welding.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록 (최대 50장 이상 추가 가능)"
-            name: "photos"
-            widget: "list"
-            fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "장비명/설명", name: "caption", widget: "string", required: false }
+          - { label: "장비 이미지 1", name: "image1", widget: "image", required: false }
+          - { label: "장비 이미지 2", name: "image2", widget: "image", required: false }
 
   - name: "sustainability"
     label: "🌿 지속가능경영"
@@ -146,12 +139,7 @@ collections:
         file: "content/safety.json"
         fields:
           - { label: "소개 문구", name: "intro", widget: "text" }
-          - label: "사진 목록"
-            name: "photos"
-            widget: "list"
-            fields:
-              - { label: "사진", name: "image", widget: "image" }
-              - { label: "설명", name: "caption", widget: "string", required: false }
+          - { label: "대표 이미지", name: "image", widget: "image", required: false }
       - label: "환경경영"
         name: "environment"
         file: "content/environment.json"
@@ -173,21 +161,15 @@ collections:
           - { label: "인사제도 이미지", name: "image1", widget: "image", required: false }
           - { label: "인재상 이미지", name: "image2", widget: "image", required: false }
           - { label: "복리후생 내용", name: "benefits", widget: "text" }
-          - { label: "지원 이메일", name: "apply_email", widget: "string", default: "hs@hskiup.co.kr" }
-          - { label: "지원 전화", name: "apply_tel", widget: "string", default: "055-345-0082" }
+          - { label: "지원 방법", name: "apply_info", widget: "text" }
 
-  - name: "orgchart"
-    label: "🏛️ 조직구성"
-    files:
-      - label: "조직도 설명"
-        name: "org"
-        file: "content/org.json"
-        fields:
-          - { label: "페이지 부제목", name: "subtitle", widget: "string", default: "고객 가치실현을 목표로 최고의 팀워크와 창의력으로 꾸준하게 노력하는 기업" }
-          - label: "부서 목록"
-            name: "departments"
-            widget: "list"
-            fields:
-              - { label: "부서명", name: "name", widget: "string" }
-              - { label: "상위 부서", name: "parent", widget: "string", required: false }
-              - { label: "하위 팀", name: "teams", widget: "string", hint: "쉼표로 구분 (예: 영업, 총무·자재)" }
+  - name: "gallery"
+    label: "📸 사진 갤러리"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "카테고리", name: "category", widget: "select", options: ["제품", "장비", "회사", "기타"] }
+      - { label: "사진", name: "image", widget: "image" }
+      - { label: "설명", name: "caption", widget: "string", required: false }
