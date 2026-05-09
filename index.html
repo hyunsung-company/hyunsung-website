@@ -282,7 +282,6 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html">
-      <img src="images/logo-mark.png" alt="현성기업" class="header-logo-img">
       <div class="logo-text">
         <span class="en">HYUN SUNG</span>
         <span class="kr">현성기업</span>
@@ -380,17 +379,22 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   <div class="hero-stats">
     <div class="stat-item">
       <div class="stat-num">30<span>+</span></div>
-      <div class="stat-label">Years of Experience</div>
+      <div class="stat-label">년 업력</div>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <div class="stat-num">500<span>+</span></div>
-      <div class="stat-label">Projects Done</div>
+      <div class="stat-num">3<span>개</span></div>
+      <div class="stat-label">주요 사업부문</div>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
       <div class="stat-num">ISO</div>
-      <div class="stat-label">Certified Quality</div>
+      <div class="stat-label">품질경영 인증</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">경남</div>
+      <div class="stat-label">김해 소재 제조기업</div>
     </div>
   </div>
 
@@ -399,7 +403,7 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
 <style>
 #main-hero {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 70px);
   margin-top: 70px;
   overflow: hidden;
   display: flex;
@@ -438,6 +442,7 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   position: relative; z-index: 2;
   padding: 0 80px;
   max-width: 600px;
+  margin-bottom: 80px;
 }
 .hero-tag {
   display: inline-flex;
@@ -519,19 +524,20 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
 }
 .pause-btn:hover { color: white; }
 
-/* 하단 통계 */
+/* 하단 통계 - 화면 안에서 보이게 위로 */
 .hero-stats {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   z-index: 3;
-  background: rgba(8,16,32,0.75);
+  background: rgba(8,16,32,0.82);
   backdrop-filter: blur(8px);
   border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
-  padding: 22px 0;
+  padding: 18px 0;
+  height: 80px;
 }
 .stat-item {
   display: flex;
@@ -634,7 +640,7 @@ startTimer();
     <div class="footer-grid">
       <div class="footer-info">
         <a class="logo" href="index.html" style="margin-bottom:16px;display:flex">
-          <div class="logo-mark">HS</div>
+          
           <div class="logo-text" style="margin-left:12px">
             <span class="en">HYUN SUNG</span>
             <span class="kr">현성기업</span>
