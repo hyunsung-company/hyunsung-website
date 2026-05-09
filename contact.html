@@ -6,14 +6,12 @@
 <title>문의하기 | 현성기업</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');</script>
 </head>
 <body>
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html">
+      <img src="images/logo-mark.png" alt="현성기업 로고" style="width:44px;height:44px;object-fit:contain;background:white;border-radius:6px;padding:2px;flex-shrink:0;">
       <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
     </a>
     <nav>
@@ -60,27 +58,28 @@
 
 <div class="content-wrap">
   <h2 class="section-title-line">상담 문의</h2>
-
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:40px">
 
-    <!-- 문의 폼 -->
     <div>
-      <form id="contactForm">
+      <!-- Netlify Form -->
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contactForm">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><input name="bot-field"></p>
         <div class="form-group">
           <label>회사명 / 성명 *</label>
-          <input type="text" id="c_name" placeholder="회사명 또는 성함" required>
+          <input type="text" name="성명" placeholder="회사명 또는 성함" required>
         </div>
         <div class="form-group">
           <label>연락처 *</label>
-          <input type="tel" id="c_tel" placeholder="010-0000-0000" required>
+          <input type="tel" name="연락처" placeholder="010-0000-0000" required>
         </div>
         <div class="form-group">
           <label>이메일</label>
-          <input type="email" id="c_email" placeholder="example@email.com">
+          <input type="email" name="이메일" placeholder="example@email.com">
         </div>
         <div class="form-group">
           <label>문의 유형</label>
-          <select id="c_type">
+          <select name="문의유형">
             <option>제품 문의</option>
             <option>장비 문의</option>
             <option>납품 문의</option>
@@ -89,18 +88,17 @@
         </div>
         <div class="form-group">
           <label>문의 내용 *</label>
-          <textarea id="c_message" placeholder="문의 내용을 자세히 입력해주세요." required></textarea>
+          <textarea name="문의내용" placeholder="문의 내용을 자세히 입력해주세요." required></textarea>
         </div>
-        <button type="submit" class="form-submit" id="contactSubmit">문의 접수</button>
+        <button type="submit" class="form-submit">문의 접수</button>
       </form>
-      <div id="contactSuccess" style="display:none;text-align:center;padding:48px 20px;background:var(--light);border-radius:8px;margin-top:16px">
+      <div id="successMsg" style="display:none;text-align:center;padding:48px 20px;background:var(--light);border-radius:8px;margin-top:16px">
         <div style="font-size:48px;margin-bottom:16px">✅</div>
         <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px">문의가 접수되었습니다</h3>
         <p style="font-size:14px;color:#6a7a90">빠른 시일 내에 연락드리겠습니다.</p>
       </div>
     </div>
 
-    <!-- 연락처 정보 -->
     <div>
       <h3 style="font-size:18px;font-weight:700;color:var(--navy);margin-bottom:24px">연락처 정보</h3>
       <div style="display:flex;flex-direction:column;gap:12px">
@@ -130,7 +128,8 @@
     <div class="footer-grid">
       <div class="footer-info">
         <a class="logo" href="index.html" style="display:flex;margin-bottom:16px">
-          <div class="logo-text" style="margin-left:0"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
+          <img src="images/logo-mark.png" alt="현성기업" style="width:36px;height:36px;object-fit:contain;background:white;border-radius:4px;padding:2px;margin-right:10px">
+          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
         </a>
         <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084</p>
       </div>
@@ -153,33 +152,18 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
-
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  var btn = document.getElementById('contactSubmit');
-  btn.textContent = '전송 중...';
-  btn.disabled = true;
-
-  var params = {
-    to_email: 'idoun98@hskiup.co.kr',
-    from_name: document.getElementById('c_name').value,
-    from_tel: document.getElementById('c_tel').value,
-    from_email: document.getElementById('c_email').value,
-    inquiry_type: document.getElementById('c_type').value,
-    message: document.getElementById('c_message').value
-  };
-
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params)
+  var form = this;
+  var data = new FormData(form);
+  fetch('/', { method: 'POST', body: data })
     .then(function() {
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('contactSuccess').style.display = 'block';
-    }, function(err) {
-      alert('전송 실패: ' + JSON.stringify(err) + '\n직접 연락 부탁드립니다: idoun98@hskiup.co.kr');
-      btn.textContent = '문의 접수';
-      btn.disabled = false;
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    })
+    .catch(function() {
+      alert('전송 오류가 발생했습니다.\n직접 연락 부탁드립니다: 055-345-0082');
     });
 });
 </script>
