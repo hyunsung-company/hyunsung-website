@@ -6,6 +6,92 @@
 <title>찾아오시는길 | 현성기업</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+.factory-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.factory-header {
+  background: var(--navy);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.factory-badge {
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.factory-header h3 {
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+}
+.factory-map {
+  width: 100%;
+  height: 280px;
+  border: none;
+  display: block;
+}
+.factory-info {
+  padding: 24px;
+  background: var(--light);
+}
+.info-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-label {
+  color: var(--gray);
+  font-weight: 500;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+.info-value { color: var(--navy); line-height: 1.6; }
+.transport-section {
+  margin-top: 32px;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.transport-section h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+.transport-item {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: #5a6a80;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+.transport-icon { flex-shrink: 0; }
+</style>
 </head>
 <body>
 <header>
@@ -22,27 +108,27 @@
           <a href="company-org.html">조직구성</a><a href="company-location.html">찾아오시는길</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link " href="product.html">제품</a>
+      <div class="nav-item"><a class="nav-link" href="product.html">제품</a>
         <div class="dropdown">
           <a href="product-rail.html">철도차량 부품</a><a href="product-defense.html">방산 부품</a>
           <a href="product-plant.html">산업플랜트</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link " href="equipment.html">장비</a>
+      <div class="nav-item"><a class="nav-link" href="equipment.html">장비</a>
         <div class="dropdown">
           <a href="equipment-press.html">프레스</a><a href="equipment-laser.html">레이저</a>
           <a href="equipment-welding.html">용접 및 기타장비</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link " href="rd.html">R&amp;D</a></div>
-      <div class="nav-item"><a class="nav-link " href="sustainability.html">지속가능경영</a>
+      <div class="nav-item"><a class="nav-link" href="rd.html">R&amp;D</a></div>
+      <div class="nav-item"><a class="nav-link" href="sustainability.html">지속가능경영</a>
         <div class="dropdown">
           <a href="ethics.html">윤리경영</a><a href="esg.html">ESG경영</a>
           <a href="safety.html">안전/보건경영</a><a href="coexistence.html">상생경영</a>
           <a href="environment.html">환경경영</a><a href="cyber.html">사이버신문고</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link " href="recruit.html">인재채용</a></div>
+      <div class="nav-item"><a class="nav-link" href="recruit.html">인재채용</a></div>
       <a class="nav-link nav-cta" href="contact.html">문의하기</a>
     </nav>
   </div>
@@ -50,33 +136,117 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="breadcrumb">홈 &gt; <div class="sub-nav"><div class="sub-nav-inner">
-  <a href="company.html">인사말</a><a href="company-cert.html">주요인증서현황</a>
-  <a href="company-sites.html">사업장현황</a><a href="company-history.html">연혁</a>
-  <a href="company-org.html">조직구성</a><a href="company-location.html">찾아오시는길</a>
-</div></div> &gt; <span>찾아오시는길</span></div>
+    <div class="breadcrumb">홈 &gt; 회사소개 &gt; <span>찾아오시는길</span></div>
     <h1>찾아오시는길</h1>
-    <p>현성기업 오시는 방법을 안내합니다.</p>
+    <p>현성기업 공장 위치를 안내합니다.</p>
   </div>
 </div>
+
+<div class="sub-nav"><div class="sub-nav-inner">
+  <a href="company.html">인사말</a>
+  <a href="company-cert.html">주요인증서현황</a>
+  <a href="company-sites.html">사업장현황</a>
+  <a href="company-history.html">연혁</a>
+  <a href="company-org.html">조직구성</a>
+  <a href="company-location.html" class="active">찾아오시는길</a>
+</div></div>
 
 <div class="content-wrap">
-  
-<h2 class="section-title-line">찾아오시는 길</h2>
-<div class="map-container">
-  <div class="map-placeholder">
-    <div style="font-size:48px">📍</div>
-    <p>경상남도 김해시 진례면<br>고모로180번길 47-36</p>
-  </div>
-</div>
-<table class="info-table">
-  <tr><th>주소</th><td>경상남도 김해시 진례면 고모로180번길 47-36</td></tr>
-  <tr><th>전화</th><td>055-345-0082</td></tr>
-  <tr><th>FAX</th><td>055-345-0084</td></tr>
-  <tr><th>자가용</th><td>남해고속도로 진례IC → 진례면 방면 → 고모로 진입 → 현성기업</td></tr>
-  <tr><th>대중교통</th><td>김해시외버스터미널 → 진례면 방면 버스 이용</td></tr>
-</table>
+  <h2 class="section-title-line">공장 위치 안내</h2>
 
+  <div class="location-grid">
+
+    <!-- 진례공장 -->
+    <div class="factory-card">
+      <div class="factory-header">
+        <span class="factory-badge">본사</span>
+        <h3>진례공장</h3>
+      </div>
+      <!-- 구글맵 - 진례공장 -->
+      <iframe
+        class="factory-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.5!2d128.7180!3d35.2480!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356f3c0000000000%3A0x0!2z6rSR7ISc7Jq47JuQ!5e0!3m2!1sko!2skr!4v1699999999999!5m2!1sko!2skr&q=경상남도+김해시+진례면+고모로180번길+47-36"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="factory-info">
+        <div class="info-row">
+          <span class="info-label">📍 주소</span>
+          <span class="info-value">경상남도 김해시 진례면 고모로180번길 47-36</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">📞 전화</span>
+          <span class="info-value">055-345-0082</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">📠 FAX</span>
+          <span class="info-value">055-345-0084</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">✉️ 이메일</span>
+          <span class="info-value">idoun98@hskiup.co.kr</span>
+        </div>
+        <div class="transport-section">
+          <h4>🚗 오시는 방법</h4>
+          <div class="transport-item">
+            <span class="transport-icon">🚙</span>
+            <span>남해고속도로 진례IC → 진례면 방면 → 고모로 진입 → 현성기업</span>
+          </div>
+          <div class="transport-item">
+            <span class="transport-icon">🚌</span>
+            <span>김해시외버스터미널 → 진례면 방면 버스 이용</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 함안공장 -->
+    <div class="factory-card">
+      <div class="factory-header">
+        <span class="factory-badge" style="background:#2e75b6">공장</span>
+        <h3>함안공장</h3>
+      </div>
+      <!-- 구글맵 - 함안공장 -->
+      <iframe
+        class="factory-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270!2d128.4050!3d35.2720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z7ZWc7JuQ6rSR7ISc!5e0!3m2!1sko!2skr!4v1699999999999!5m2!1sko!2skr&q=경상남도+함안군+법수면+법수로+358-16"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="factory-info">
+        <div class="info-row">
+          <span class="info-label">📍 주소</span>
+          <span class="info-value">경상남도 함안군 법수면 법수로 358-16</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">📞 전화</span>
+          <span class="info-value">055-345-0082</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">📠 FAX</span>
+          <span class="info-value">055-345-0084</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">✉️ 이메일</span>
+          <span class="info-value">idoun98@hskiup.co.kr</span>
+        </div>
+        <div class="transport-section">
+          <h4>🚗 오시는 방법</h4>
+          <div class="transport-item">
+            <span class="transport-icon">🚙</span>
+            <span>남해고속도로 함안IC → 법수면 방면 → 법수로 진입 → 현성기업 함안공장</span>
+          </div>
+          <div class="transport-item">
+            <span class="transport-icon">🚌</span>
+            <span>함안버스터미널 → 법수면 방면 버스 이용</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <footer>
@@ -84,10 +254,10 @@
     <div class="footer-grid">
       <div class="footer-info">
         <a class="logo" href="index.html" style="display:flex;margin-bottom:16px">
-          
-          <div class="logo-text" style="margin-left:12px"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
+          <img src="images/logo-mark.png" alt="현성기업" style="width:36px;height:36px;object-fit:contain;background:white;border-radius:4px;padding:2px;margin-right:10px">
+          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
         </a>
-        <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084<br>E-mail: hskiup@naver.com</p>
+        <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084</p>
       </div>
       <div class="footer-col"><h5>회사소개</h5>
         <a href="company.html">인사말</a><a href="company-cert.html">주요인증서현황</a>
@@ -95,21 +265,17 @@
       </div>
       <div class="footer-col"><h5>제품/장비</h5>
         <a href="product-rail.html">철도차량 부품</a><a href="product-defense.html">방산 부품</a>
-        <a href="product-plant.html">산업플랜트</a><a href="equipment-press.html">프레스</a>
+        <a href="product-plant.html">산업플랜트</a>
       </div>
       <div class="footer-col"><h5>고객지원</h5>
-        <a href="ethics.html">윤리경영</a><a href="esg.html">ESG경영</a>
-        <a href="recruit.html">인재채용</a><a href="contact.html">문의하기</a>
+        <a href="cyber.html">사이버신문고</a><a href="recruit.html">인재채용</a>
+        <a href="contact.html">문의하기</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>Copyright © Hyun Sung Co., Ltd. All Rights Reserved.</span>
-      <a href="#">ADMIN</a>
     </div>
   </div>
 </footer>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
-</script>
-</body></html>
+</body>
+</html>
