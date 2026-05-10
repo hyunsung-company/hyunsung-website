@@ -2,9 +2,7 @@ backend:
   name: github
   repo: hyunsung-company/hyunsung-website
   branch: main
-  base_url: https://sveltia-cms-auth.pages.dev
-  auth_endpoint: auth
-
+  
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
