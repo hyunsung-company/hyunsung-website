@@ -6,46 +6,6 @@
 <title>주요인증서현황 | 현성기업</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-}
-.cert-card {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.cert-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-4px); }
-.cert-img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: var(--light);
-  display: block;
-  padding: 16px;
-}
-.cert-img-placeholder {
-  width: 100%;
-  height: 220px;
-  background: var(--light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-}
-.cert-body { padding: 20px; }
-.cert-body h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.cert-body p { font-size: 13px; color: #6a7a90; line-height: 1.7; }
-.empty-msg {
-  text-align: center; padding: 60px; color: var(--gray); font-size: 14px;
-  background: var(--light); border-radius: 8px; border: 2px dashed var(--border);
-  grid-column: 1/-1;
-}
-</style>
 </head>
 <body>
 <header>
@@ -62,27 +22,27 @@
           <a href="company-org.html">조직구성</a><a href="company-location.html">찾아오시는길</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="product.html">제품</a>
+      <div class="nav-item"><a class="nav-link " href="product.html">제품</a>
         <div class="dropdown">
           <a href="product-rail.html">철도차량 부품</a><a href="product-defense.html">방산 부품</a>
           <a href="product-plant.html">산업플랜트</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="equipment.html">장비</a>
+      <div class="nav-item"><a class="nav-link " href="equipment.html">장비</a>
         <div class="dropdown">
           <a href="equipment-press.html">프레스</a><a href="equipment-laser.html">레이저</a>
           <a href="equipment-welding.html">용접 및 기타장비</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="rd.html">R&amp;D</a></div>
-      <div class="nav-item"><a class="nav-link" href="sustainability.html">지속가능경영</a>
+      <div class="nav-item"><a class="nav-link " href="rd.html">R&amp;D</a></div>
+      <div class="nav-item"><a class="nav-link " href="sustainability.html">지속가능경영</a>
         <div class="dropdown">
           <a href="ethics.html">윤리경영</a><a href="esg.html">ESG경영</a>
           <a href="safety.html">안전/보건경영</a><a href="coexistence.html">상생경영</a>
           <a href="environment.html">환경경영</a><a href="cyber.html">사이버신문고</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="recruit.html">인재채용</a></div>
+      <div class="nav-item"><a class="nav-link " href="recruit.html">인재채용</a></div>
       <a class="nav-link nav-cta" href="contact.html">문의하기</a>
     </nav>
   </div>
@@ -90,26 +50,28 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="breadcrumb">홈 &gt; 회사소개 &gt; <span>주요인증서현황</span></div>
+    <div class="breadcrumb">홈 &gt; <div class="sub-nav"><div class="sub-nav-inner">
+  <a href="company.html">인사말</a><a href="company-cert.html">주요인증서현황</a>
+  <a href="company-sites.html">사업장현황</a><a href="company-history.html">연혁</a>
+  <a href="company-org.html">조직구성</a><a href="company-location.html">찾아오시는길</a>
+</div></div> &gt; <span>주요인증서현황</span></div>
     <h1>주요인증서현황</h1>
     <p>현성기업이 보유한 품질 인증 현황입니다.</p>
   </div>
 </div>
 
-<div class="sub-nav"><div class="sub-nav-inner">
-  <a href="company.html">인사말</a>
-  <a href="company-cert.html" class="active">주요인증서현황</a>
-  <a href="company-sites.html">사업장현황</a>
-  <a href="company-history.html">연혁</a>
-  <a href="company-org.html">조직구성</a>
-  <a href="company-location.html">찾아오시는길</a>
-</div></div>
-
 <div class="content-wrap">
-  <h2 class="section-title-line">주요 인증서 현황</h2>
-  <div class="cert-grid" id="cert-grid">
-    <div class="empty-msg">로딩 중...</div>
-  </div>
+  
+<h2 class="section-title-line">주요 인증서 현황</h2>
+<div class="info-box-grid">
+  <div class="info-box"><h4>🏆 ISO 9001</h4><p>품질경영시스템 국제 인증<br>취득일: 2010년<br>인증기관: KR</p></div>
+  <div class="info-box"><h4>🏆 특수공정인증서 ARC 용접(GTAW)-강 용접</h4><p>TACOM 12479550<br>취득일: 2024년<br>인증기관: 한화에어로스페이즈 주식회사</p></div>
+  <div class="info-box"><h4>🏆 DIN EN ISO 3834</h4><p>DAkkS<br>취득일: 2024년<br>TUVNORD</p></div>
+  <div class="info-box"><h4>📋 CLEAN 사업장 인정</h4><p>노동부장관 인증<br>취득일: 2006년<br>인증기관: 한국산업안전공단</p></div>
+  <div class="info-box"><h4>📋 EN 15085-2:2020 classification level CL1</h4><p>DAkkS<br>취득일: 2024년<br>TUVNORD</p></div>
+  <div class="info-box"><h4>📋 벤처기업 인증</h4><p>중소벤처기업부 벤처기업 인증<br>기술혁신형 중소기업(INNO-BIZ)</p></div>
+</div>
+
 </div>
 
 <footer>
@@ -117,10 +79,10 @@
     <div class="footer-grid">
       <div class="footer-info">
         <a class="logo" href="index.html" style="display:flex;margin-bottom:16px">
-          <img src="images/logo-mark.png" alt="현성기업" style="width:36px;height:36px;object-fit:contain;background:white;border-radius:4px;padding:2px;margin-right:10px">
-          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
+          
+          <div class="logo-text" style="margin-left:12px"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
         </a>
-        <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084</p>
+        <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084<br>E-mail: hskiup@naver.com</p>
       </div>
       <div class="footer-col"><h5>회사소개</h5>
         <a href="company.html">인사말</a><a href="company-cert.html">주요인증서현황</a>
@@ -128,11 +90,11 @@
       </div>
       <div class="footer-col"><h5>제품/장비</h5>
         <a href="product-rail.html">철도차량 부품</a><a href="product-defense.html">방산 부품</a>
-        <a href="product-plant.html">산업플랜트</a>
+        <a href="product-plant.html">산업플랜트</a><a href="equipment-press.html">프레스</a>
       </div>
       <div class="footer-col"><h5>고객지원</h5>
-        <a href="cyber.html">사이버신문고</a><a href="recruit.html">인재채용</a>
-        <a href="contact.html">문의하기</a>
+        <a href="ethics.html">윤리경영</a><a href="esg.html">ESG경영</a>
+        <a href="recruit.html">인재채용</a><a href="contact.html">문의하기</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -141,31 +103,8 @@
     </div>
   </div>
 </footer>
-
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-fetch('/content/certifications.json')
-  .then(r => r.json())
-  .then(data => {
-    var grid = document.getElementById('cert-grid');
-    if (!data.items || data.items.length === 0) {
-      grid.innerHTML = '<div class="empty-msg">📋 관리자 페이지에서 인증서를 추가해주세요.</div>';
-      return;
-    }
-    grid.innerHTML = data.items.map(function(item) {
-      var imgHtml = item.image
-        ? '<img class="cert-img" src="' + item.image + '" alt="' + item.title + '" onerror="this.parentElement.querySelector(\'.cert-img-placeholder\').style.display=\'flex\';this.style.display=\'none\'">'
-        : '';
-      var placeholder = !item.image ? '<div class="cert-img-placeholder">🏆</div>' : '<div class="cert-img-placeholder" style="display:none">🏆</div>';
-      return '<div class="cert-card">' +
-        imgHtml + placeholder +
-        '<div class="cert-body"><h3>' + item.title + '</h3>' +
-        (item.desc ? '<p>' + item.desc + '</p>' : '') +
-        '</div></div>';
-    }).join('');
-  })
-  .catch(function() {
-    document.getElementById('cert-grid').innerHTML = '<div class="empty-msg">📋 관리자 페이지에서 인증서를 추가해주세요.</div>';
-  });
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
 </script>
-</body>
-</html>
+</body></html>
