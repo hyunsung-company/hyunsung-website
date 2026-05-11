@@ -6,6 +6,48 @@
 <title>용접 및 기타장비 | 현성기업</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.photo-item {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--light);
+}
+.photo-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.photo-caption {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #6a7a90;
+  text-align: center;
+}
+.intro-text {
+  font-size: 15px;
+  color: #5a6a80;
+  line-height: 2;
+  margin-bottom: 16px;
+}
+.empty-msg {
+  text-align: center;
+  padding: 60px;
+  color: var(--gray);
+  font-size: 14px;
+  background: var(--light);
+  border-radius: 8px;
+  border: 2px dashed var(--border);
+  grid-column: 1/-1;
+}
+</style>
 </head>
 <body>
 <header>
@@ -15,7 +57,7 @@
       <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
     </a>
     <nav>
-      <div class="nav-item"><a class="nav-link " href="company.html">회사소개</a>
+      <div class="nav-item"><a class="nav-link" href="company.html">회사소개</a>
         <div class="dropdown">
           <a href="company.html">인사말</a><a href="company-cert.html">주요인증서현황</a>
           <a href="company-sites.html">사업장현황</a><a href="company-history.html">연혁</a>
@@ -34,53 +76,47 @@
           <a href="equipment-welding.html">용접 및 기타장비</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link " href="rd.html">R&amp;D</a></div>
-      <div class="nav-item"><a class="nav-link " href="sustainability.html">지속가능경영</a>
+      <div class="nav-item"><a class="nav-link" href="rd.html">R&amp;D</a></div>
+      <div class="nav-item"><a class="nav-link" href="sustainability.html">지속가능경영</a>
         <div class="dropdown">
           <a href="ethics.html">윤리경영</a><a href="esg.html">ESG경영</a>
           <a href="safety.html">안전/보건경영</a><a href="coexistence.html">상생경영</a>
           <a href="environment.html">환경경영</a><a href="cyber.html">사이버신문고</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link " href="recruit.html">인재채용</a></div>
+      <div class="nav-item"><a class="nav-link" href="recruit.html">인재채용</a></div>
       <a class="nav-link nav-cta" href="contact.html">문의하기</a>
     </nav>
   </div>
 </header>
-
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="breadcrumb">홈 &gt; <div class="sub-nav"><div class="sub-nav-inner">
-  <a href="equipment-press.html">프레스</a><a href="equipment-laser.html">레이저</a>
-  <a href="equipment-welding.html">용접 및 기타장비</a>
-</div></div> &gt; <span>용접 및 기타장비</span></div>
+    <div class="breadcrumb">홈 &gt; 장비 &gt; <span>용접 및 기타장비</span></div>
     <h1>용접 및 기타장비</h1>
-    <p>다양한 용접 및 제조 장비를 보유합니다.</p>
+    <p>용접 및 제조 설비를 보유합니다.</p>
   </div>
 </div>
-
+<div class="sub-nav"><div class="sub-nav-inner">
+  <a href="equipment-press.html" >프레스</a>
+  <a href="equipment-laser.html" >레이저</a>
+  <a href="equipment-welding.html" class="active">용접 및 기타장비</a>
+</div></div>
 <div class="content-wrap">
-  
-<h2 class="section-title-line">용접 및 기타장비</h2>
-<p style="font-size:14px;color:#5a6a80;line-height:2;margin-bottom:32px">다양한 용접 장비와 기타 제조 설비를 통해 복잡한 금속 구조물도 정밀하게 제작합니다.</p>
-<div class="info-box-grid">
-  <div class="info-box"><h4>🔥 MIG/MAG 용접</h4><p>자동화 MIG/MAG 용접으로 생산성 및 품질 향상.</p></div>
-  <div class="info-box"><h4>🔥 TIG 용접</h4><p>정밀 TIG 용접으로 고품질 용접부 구현.</p></div>
-  <div class="info-box"><h4>⚙️ 기타 설비</h4><p>절곡, 롤링, 쇼트블라스트 등 다양한 제조 설비 보유.</p></div>
+  <h2 class="section-title-line">용접 및 기타장비</h2>
+  <p class="intro-text" id="intro-text">로딩 중...</p>
+  <div class="photo-grid" id="photo-grid">
+    <div class="empty-msg">로딩 중...</div>
+  </div>
 </div>
-<p style="font-size:12px;color:var(--gray);margin-top:24px">※ 상세 장비 목록은 추후 업데이트 예정입니다.</p>
-
-</div>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-info">
         <a class="logo" href="index.html" style="display:flex;margin-bottom:16px">
-          
-          <div class="logo-text" style="margin-left:12px"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
+          <img src="images/logo-mark.png" alt="현성기업" style="width:36px;height:36px;object-fit:contain;background:white;border-radius:4px;padding:2px;margin-right:10px">
+          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
         </a>
-        <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084<br>E-mail: hskiup@naver.com</p>
+        <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084</p>
       </div>
       <div class="footer-col"><h5>회사소개</h5>
         <a href="company.html">인사말</a><a href="company-cert.html">주요인증서현황</a>
@@ -88,21 +124,40 @@
       </div>
       <div class="footer-col"><h5>제품/장비</h5>
         <a href="product-rail.html">철도차량 부품</a><a href="product-defense.html">방산 부품</a>
-        <a href="product-plant.html">산업플랜트</a><a href="equipment-press.html">프레스</a>
+        <a href="product-plant.html">산업플랜트</a>
       </div>
       <div class="footer-col"><h5>고객지원</h5>
-        <a href="ethics.html">윤리경영</a><a href="esg.html">ESG경영</a>
-        <a href="recruit.html">인재채용</a><a href="contact.html">문의하기</a>
+        <a href="cyber.html">사이버신문고</a><a href="recruit.html">인재채용</a>
+        <a href="contact.html">문의하기</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Copyright © Hyun Sung Co., Ltd. All Rights Reserved.</span>
+      <span>Copyright &copy; Hyun Sung Co., Ltd. All Rights Reserved.</span>
       <a href="/admin" target="_blank">ADMIN</a>
     </div>
   </div>
 </footer>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
-if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
+fetch('/content/photos-welding.json')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('intro-text').textContent = data.intro || '다양한 용접 장비와 기타 제조 설비를 보유합니다.';
+    var grid = document.getElementById('photo-grid');
+    if (!data.photos || data.photos.length === 0) {
+      grid.innerHTML = '<div class="empty-msg">📷 관리자 페이지에서 사진을 추가해주세요.</div>';
+      return;
+    }
+    grid.innerHTML = data.photos.map(function(p) {
+      return '<div class="photo-item">' +
+        '<img src="' + p.image + '" alt="' + (p.caption||'용접 및 기타장비') + '" onerror="this.parentElement.style.display='none'">' +
+        (p.caption ? '<div class="photo-caption">' + p.caption + '</div>' : '') +
+        '</div>';
+    }).join('');
+  })
+  .catch(function() {
+    document.getElementById('intro-text').textContent = '다양한 용접 장비와 기타 제조 설비를 보유합니다.';
+    document.getElementById('photo-grid').innerHTML = '<div class="empty-msg">📷 관리자 페이지에서 사진을 추가해주세요.</div>';
+  });
 </script>
-</body></html>
+</body>
+</html>

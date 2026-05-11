@@ -1,9 +1,1 @@
-{
-  "intro": "사진을 추가해주세요.",
-  "photos": [
-    {
-      "caption": "Mechanical Press",
-      "image": "/images/uploads/프레스.jpg"
-    }
-  ]
-}
+{"intro":"사진을 추가해주세요.","photos":[]}

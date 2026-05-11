@@ -1,9 +1,7 @@
 backend:
-  name: github
-  repo: hyunsung-company/hyunsung-website
+  name: git-gateway
   branch: main
-  base_url: https://github-oauth.idoun98.workers.dev
-  
+
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
