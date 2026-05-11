@@ -1,9 +1,19 @@
 {
   "items": [
     {
-      "title": "🏆 ISO 9001",
-      "desc": "품질경영시스템 국제 인증\n갱신 재발급일: 2023년\n인증기관: KOSRE 중소벤처기업인증원장",
+      "title": "🏆 KS Q ISO 9001:2015 (KOR)",
+      "desc": "인증범위 : 철도 차량 부품, 제철설비, 산업기계의 생산\n갱신 재발급일: 2023년\n인증기관: KOSRE 중소벤처기업인증원장",
       "image": "/images/uploads/1.png"
+    },
+    {
+      "title": "🏆 KS Q ISO 9001:2015 (ENG)",
+      "desc": "Scope of Supply : The Manufacture of Rolling Stock Parts, Iron Manufacturing Equipment Industrial Machinery\nRenewal reissue date: 2023년\nCertification agency: Korea SMEs & Startups Registrar",
+      "image": "/images/uploads/iso-9001-영문.png"
+    },
+    {
+      "title": "🏆 TUVNORD/15085/CL1/557/24/0",
+      "image": "/images/uploads/iso-15085.png",
+      "desc": "Welding of railway vehicles and components according to EN 15085-2:2020\n취득일: 2024년\n인증기관: TUV NORD Systems GmbH & Co. KG"
     },
     {
       "title": "🏆 DIN EN ISO 3834 PART 2",
@@ -14,11 +24,6 @@
       "title": "🏆 특수공정인증서 ARC 용접(GTAW)-강 용접",
       "desc": "TACOM 12479550\n취득일: 2024년\n인증기관: 한화에어로스페이즈 주식회사",
       "image": "/images/uploads/2.png"
-    },
-    {
-      "title": "🏆 TUVNORD/15085/CL1/557/24/0",
-      "image": "/images/uploads/iso-15085.png",
-      "desc": "Welding of railway vehicles and components according to EN 15085-2:2020\n취득일: 2024년\n인증기관: TUV NORD Systems GmbH & Co. KG"
     }
   ]
 }
