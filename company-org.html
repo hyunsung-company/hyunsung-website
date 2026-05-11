@@ -114,15 +114,19 @@
   <div class="org-wrap">
 
     <!-- SVG 조직도 -->
-<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg"
-     style="width:100%;max-width:1000px;display:block;margin:0 auto;font-family:'Noto Sans KR',sans-serif">
-
+  <svg viewBox="-80 0 1160 600" xmlns="http://www.w3.org/2000/svg"
+     style="width:100%;max-width:1100px;display:block;margin:0 auto;font-family:'Noto Sans KR',sans-serif">
+  
   <!-- 대표이사 → 전무이사 수직선 -->
   <line x1="450" y1="58" x2="450" y2="120" stroke="#bbb" stroke-width="2"/>
 
   <!-- 대표이사 → 품질관리부 수평선 -->
   <line x1="550" y1="34" x2="860" y2="34" stroke="#bbb" stroke-width="2"/>
   <line x1="860" y1="34" x2="860" y2="120" stroke="#bbb" stroke-width="2"/>
+
+  <!-- 대표이사 → 기업부설연구소 수평선 -->
+  <line x1="350" y1="34" x2="40" y2="34" stroke="#bbb" stroke-width="2"/>
+  <line x1="40" y1="34" x2="40" y2="120" stroke="#bbb" stroke-width="2"/>
 
   <!-- 전무이사 → 3부서 수평선 -->
   <line x1="450" y1="178" x2="450" y2="210" stroke="#bbb" stroke-width="2"/>
@@ -152,7 +156,11 @@
   <!-- 품질관리부 -->
   <rect x="760" y="120" width="200" height="58" rx="4" fill="#2e75b6"/>
   <text x="860" y="156" text-anchor="middle" fill="white" font-size="17" font-weight="600">품질관리부</text>
-
+  
+  <!-- 기업부설연구소 -->
+  <rect x="-60" y="120" width="200" height="58" rx="4" fill="#2e75b6"/>
+  <text x="40" y="156" text-anchor="middle" fill="white" font-size="17" font-weight="600">기업부설연구소</text>
+  
   <!-- 전무이사 -->
   <rect x="350" y="120" width="200" height="58" rx="4" fill="#5b9bd5"/>
   <text x="450" y="156" text-anchor="middle" fill="white" font-size="17" font-weight="600">전무이사</text>
