@@ -37,8 +37,13 @@
     },
     {
       "image": "/images/uploads/clean-사업장-인정서_한국산업안전공단.png",
-      "title": "CLEAN 사업장 인정서",
+      "title": "🏆 CLEAN 사업장 인정서",
       "desc": "귀 사업장을 안전하고 쾌적한 [CLEAN 사업장]으로 인정\n인증기관: 한국사업안전공단"
+    },
+    {
+      "title": "🏆 특허증",
+      "image": "/images/uploads/특허증.png",
+      "desc": "열연코일의 냉각방법\n인증기관: 특허증"
     }
   ]
 }
