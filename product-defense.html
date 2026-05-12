@@ -74,38 +74,43 @@
 <h2 class="section-title-line" style="margin-top:56px;">납품현황</h2>
 <p style="font-size:14px;color:#5a6a80;line-height:2;margin-bottom:36px;">현성기업 산업플랜트 납품현황입니다.</p>
 
-<!-- max-width를 1000px로 키워서 더 크게 보이게 설정 -->
-<div style="display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:56px; max-width:1000px; margin-left:auto; margin-right:auto;">
+<!-- 전체 너비를 1100px로 조금 더 키웠습니다 -->
+<div style="display:grid;grid-template-columns:1fr;gap:50px;margin-bottom:56px; max-width:1100px; margin-left:auto; margin-right:auto;">
 
-  <!-- 카드 1 -->
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #e2e8f0; background:#ffffff;">
-    <!-- margin-top: -20px를 주어 이미지 윗부분의 빨간 점을 프레임 밖으로 밀어내어 가립니다. -->
-    <div style="background:#ffffff; display:flex; align-items:center; justify-content:center; aspect-ratio: 21/9; overflow:hidden;">
-      <img src="images/30mm 차륜형 대공포 외부상자 6종.png" alt="30mm 차륜형 대공포" style="width:100%; height:110%; object-fit:cover; margin-top:-20px;">
+  <!-- 카드 공통 구조 -->
+  <div style="border-radius:12px; overflow:hidden; border:1px solid #e2e8f0; background:#ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+    
+    <!-- 1. 박스 높이를 넉넉하게 잡기 위해 aspect-ratio를 16/10으로 변경 (덜 납작하게) -->
+    <!-- 2. overflow: hidden과 margin-top: -15px의 조합으로 빨간 점만 가림 -->
+    <div style="width:100%; aspect-ratio: 16/10; overflow:hidden; background:#ffffff; display:flex; align-items:flex-start;">
+      <img src="images/30mm 차륜형 대공포 외부상자 6종.png" alt="30mm 차륜형 대공포" 
+           style="width:100%; height:auto; margin-top:-15px; object-fit: contain;">
     </div>
-    <div style="padding:15px;background:#f8fafc;border-top:1px solid #e2e8f0;">
-      <p style="font-size:15px;color:#374151;margin:0;font-weight:600;text-align:center;">30mm 차륜형 대공포 외부상자 6종</p>
+
+    <div style="padding:20px; background:#f8fafc; border-top:1px solid #e2e8f0;">
+      <p style="font-size:16px; color:#1e293b; margin:0; font-weight:600; text-align:center;">30mm 차륜형 대공포 외부상자 6종</p>
     </div>
   </div>
 
-  <!-- 카드 2 -->
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #e2e8f0; background:#ffffff;">
-    <div style="background:#ffffff; display:flex; align-items:center; justify-content:center; aspect-ratio: 21/9; overflow:hidden;">
-      <img src="images/K806 차체 장갑 판재 기계작업.png" alt="K-806 차체" style="width:100%; height:110%; object-fit:cover; margin-top:-20px;">
+  <div style="border-radius:12px; overflow:hidden; border:1px solid #e2e8f0; background:#ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+    <div style="width:100%; aspect-ratio: 16/10; overflow:hidden; background:#ffffff; display:flex; align-items:flex-start;">
+      <img src="images/K806 차체 장갑 판재 기계작업.png" alt="K-806 차체" 
+           style="width:100%; height:auto; margin-top:-15px; object-fit: contain;">
     </div>
-    <div style="padding:15px;background:#f8fafc;border-top:1px solid #e2e8f0;">
-      <p style="font-size:15px;color:#374151;margin:0;font-weight:600;text-align:center;">K-806 차체 장갑 판재 기계작업</p>
+    <div style="padding:20px; background:#f8fafc; border-top:1px solid #e2e8f0;">
+      <p style="font-size:16px; color:#1e293b; margin:0; font-weight:600; text-align:center;">K-806 차체 장갑 판재 기계작업</p>
     </div>
   </div>
 
-  <!-- 카드 3 -->
-  <div style="border-radius:10px;overflow:hidden;border:1px solid #e2e8f0; background:#ffffff;">
-    <div style="background:#ffffff; display:flex; align-items:center; justify-content:center; aspect-ratio: 21/9; overflow:hidden;">
-      <img src="images/차륜형 지휘소 차량 외부상자 6종, 내부상자 4종.png" alt="차륜형 지휘소 차량" style="width:100%; height:110%; object-fit:cover; margin-top:-20px;">
+  <div style="border-radius:12px; overflow:hidden; border:1px solid #e2e8f0; background:#ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+    <div style="width:100%; aspect-ratio: 16/10; overflow:hidden; background:#ffffff; display:flex; align-items:flex-start;">
+      <img src="images/차륜형 지휘소 차량 외부상자 6종, 내부상자 4종.png" alt="차륜형 지휘소 차량" 
+           style="width:100%; height:auto; margin-top:-15px; object-fit: contain;">
     </div>
-    <div style="padding:15px;background:#f8fafc;border-top:1px solid #e2e8f0;">
-      <p style="font-size:15px;color:#374151;margin:0;font-weight:600;text-align:center;">차륜형 지휘소 차량 외부상자 6종 / 내부상자 4종</p>
+    <div style="padding:20px; background:#f8fafc; border-top:1px solid #e2e8f0;">
+      <p style="font-size:16px; color:#1e293b; margin:0; font-weight:600; text-align:center;">차륜형 지휘소 차량 외부상자 6종 / 내부상자 4종</p>
     </div>
+  
      
   </div>
 
