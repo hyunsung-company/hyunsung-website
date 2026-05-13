@@ -280,12 +280,29 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   border-radius: 4px; background: black; padding: 2px; flex-shrink: 0;
 }
 
+/* 모든 페이지 nav 폰트 강제 적용 */
+nav .nav-link,
+header nav a.nav-link {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 17px !important;
+  letter-spacing: 1px !important;
+  font-weight: 400 !important;
+}
+nav .nav-cta,
+header nav a.nav-cta {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 17px !important;
+}
+
 /* MOBILE */
 @media (max-width: 900px) {
   nav { display: none; }
   .card-grid, .info-box-grid, .talent-grid, .edu-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .content-wrap { padding: 40px 20px; }
+
+  /* 모바일 헤더 가운데 정렬 */
+  .header-inner { justify-content: center !important; padding: 0 20px; }
 
   /* 로고 */
   .logo-text .en { font-size: 18px; letter-spacing: 3px; }
