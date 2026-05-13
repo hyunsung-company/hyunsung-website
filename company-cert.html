@@ -39,11 +39,14 @@
 }
 .cert-body { padding: 20px; }
 .cert-body h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.cert-body p { font-size: 13px; color: #6a7a90; line-height: 1.7; }
+.cert-body p { font-size: 13px; color: #6a7a90; line-height: 1.9; }
 .empty-msg {
   text-align: center; padding: 60px; color: var(--gray); font-size: 14px;
   background: var(--light); border-radius: 8px; border: 2px dashed var(--border);
   grid-column: 1/-1;
+}
+@media (max-width: 900px) {
+  .cert-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -52,7 +55,7 @@
   <div class="header-inner">
     <a class="logo" href="index.html">
       <img src="images/logo-mark.png" alt="현성기업 로고" style="width:44px;height:44px;object-fit:contain;background:white;border-radius:6px;padding:2px;flex-shrink:0;">
-      <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
+      <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업(주)</span></div>
     </a>
     <nav>
       <div class="nav-item"><a class="nav-link active" href="company.html">회사소개</a>
@@ -65,7 +68,7 @@
       <div class="nav-item"><a class="nav-link" href="product.html">제품</a>
         <div class="dropdown">
           <a href="product-rail.html">철도차량 부품</a><a href="product-defense.html">방산 부품</a>
-          <a href="product-plant.html">산업플랜트</a>
+          <a href="product-plant.html">산업플랜트</a><a href="product-etc.html">기타</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" href="equipment.html">장비</a>
@@ -118,7 +121,7 @@
       <div class="footer-info">
         <a class="logo" href="index.html" style="display:flex;margin-bottom:16px">
           <img src="images/logo-mark.png" alt="현성기업" style="width:36px;height:36px;object-fit:contain;background:white;border-radius:4px;padding:2px;margin-right:10px">
-          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업</span></div>
+          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">현성기업(주)</span></div>
         </a>
         <p style="margin-top:16px">대표: 최석림 | 사업자번호: 606-81-14505<br>경상남도 김해시 진례면 고모로180번길 47-36<br>TEL: 055-345-0082 | FAX: 055-345-0084<br>E-mail: hs@hskiup.co.kr</p>
       </div>
@@ -155,11 +158,13 @@ fetch('/content/certifications.json')
       var imgHtml = item.image
         ? '<img class="cert-img" src="' + item.image + '" alt="' + item.title + '" onerror="this.parentElement.querySelector(\'.cert-img-placeholder\').style.display=\'flex\';this.style.display=\'none\'">'
         : '';
-      var placeholder = !item.image ? '<div class="cert-img-placeholder">🏆</div>' : '<div class="cert-img-placeholder" style="display:none">🏆</div>';
+      var placeholder = !item.image
+        ? '<div class="cert-img-placeholder">🏆</div>'
+        : '<div class="cert-img-placeholder" style="display:none">🏆</div>';
       return '<div class="cert-card">' +
         imgHtml + placeholder +
         '<div class="cert-body"><h3>' + item.title + '</h3>' +
-        (item.desc ? '<p>' + item.desc + '</p>' : '') +
+        (item.desc ? '<p>' + item.desc.replace(/\n/g, '<br>') + '</p>' : '') +
         '</div></div>';
     }).join('');
   })
