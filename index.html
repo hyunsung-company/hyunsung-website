@@ -465,84 +465,85 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
       </div>
       <a class="nav-link nav-cta" href="contact.html">문의하기</a>
     </nav>
-    <!-- 햄버거 버튼 (모바일) -->
-    <button class="hamburger" onclick="toggleMenu()" id="hamburgerBtn" style="display:none;background:none;border:none;">
-      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;margin:4px 0;"></span>
-      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;margin:4px 0;"></span>
-      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;margin:4px 0;"></span>
+    <button id="hamburgerBtn" onclick="openMenu()" style="display:none;background:none;border:none;cursor:pointer;padding:10px;flex-direction:column;justify-content:center;gap:5px;margin-left:auto;">
+      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;"></span>
     </button>
   </div>
 </header>
 
-<!-- 모바일 메뉴 -->
-<div id="mobileMenu" style="display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:#0a1628;z-index:999;overflow-y:auto;">
+<!-- 어두운 배경 오버레이 -->
+<div id="menuOverlay" onclick="closeMenu()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;"></div>
+
+<!-- 슬라이드 메뉴 (오른쪽에서 열림) -->
+<div id="mobileMenu" style="position:fixed;top:0;right:-310px;width:290px;bottom:0;background:#0a1628;z-index:1001;overflow-y:auto;transition:right 0.3s ease;box-shadow:-6px 0 24px rgba(0,0,0,0.4);">
   <style>
-    .mmenu-group { padding: 20px 28px 8px; font-size:10px; letter-spacing:3px; color:#e8601c; text-transform:uppercase; font-weight:700; }
-    .mmenu-link { display:block; padding:13px 28px; color:rgba(255,255,255,0.85); text-decoration:none; font-size:15px; font-weight:400; border-bottom:1px solid rgba(255,255,255,0.06); transition:color 0.2s, padding-left 0.2s; }
-    .mmenu-link:hover { color:#e8601c; padding-left:36px; }
-    .mmenu-sub { display:block; padding:10px 40px; color:rgba(255,255,255,0.5); text-decoration:none; font-size:13px; border-bottom:1px solid rgba(255,255,255,0.04); transition:color 0.2s; }
-    .mmenu-sub:hover { color:rgba(255,255,255,0.85); }
-    .mmenu-cta { display:block; margin:24px 28px 32px; padding:14px; background:#e8601c; color:white; text-align:center; border-radius:6px; text-decoration:none; font-size:15px; font-weight:600; letter-spacing:1px; }
-    .mmenu-cta:hover { background:#c9541a; }
-    .mmenu-divider { height:1px; background:rgba(255,255,255,0.08); margin:8px 0; }
+    .mm-head { display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:70px;border-bottom:1px solid rgba(255,255,255,0.1); }
+    .mm-close { background:none;border:none;color:rgba(255,255,255,0.6);font-size:22px;cursor:pointer;line-height:1; }
+    .mm-close:hover { color:white; }
+    .mm-cat { padding:18px 20px 6px;font-size:10px;letter-spacing:3px;color:#e8601c;text-transform:uppercase;font-weight:700; }
+    .mm-item { display:block;padding:12px 20px 12px 32px;color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05); }
+    .mm-item:hover { color:white;background:rgba(255,255,255,0.04); }
+    .mm-main { display:block;padding:14px 20px;color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.1); }
+    .mm-main:hover { color:#e8601c; }
+    .mm-btn { display:block;margin:24px 20px 32px;padding:14px;background:#e8601c;color:white;text-align:center;border-radius:6px;text-decoration:none;font-size:15px;font-weight:600; }
+    .mm-btn:hover { background:#c9541a; }
   </style>
 
-  <div class="mmenu-group">회사소개</div>
-  <a href="company.html" class="mmenu-sub">인사말</a>
-  <a href="company-cert.html" class="mmenu-sub">주요인증서현황</a>
-  <a href="company-sites.html" class="mmenu-sub">사업장현황</a>
-  <a href="company-history.html" class="mmenu-sub">연혁</a>
-  <a href="company-org.html" class="mmenu-sub">조직구성</a>
-  <a href="company-location.html" class="mmenu-sub">찾아오시는길</a>
+  <div class="mm-head">
+    <span style="font-family:'Bebas Neue';color:white;font-size:20px;letter-spacing:3px;">HYUN SUNG</span>
+    <button class="mm-close" onclick="closeMenu()">✕</button>
+  </div>
 
-  <div class="mmenu-divider"></div>
-  <div class="mmenu-group">제품</div>
-  <a href="product-rail.html" class="mmenu-sub">철도차량 부품</a>
-  <a href="product-defense.html" class="mmenu-sub">방산 부품</a>
-  <a href="product-plant.html" class="mmenu-sub">산업플랜트</a>
-  <a href="product-etc.html" class="mmenu-sub">기타</a>
+  <div class="mm-cat">회사소개</div>
+  <a href="company.html" class="mm-item">인사말</a>
+  <a href="company-cert.html" class="mm-item">주요인증서현황</a>
+  <a href="company-sites.html" class="mm-item">사업장현황</a>
+  <a href="company-history.html" class="mm-item">연혁</a>
+  <a href="company-org.html" class="mm-item">조직구성</a>
+  <a href="company-location.html" class="mm-item">찾아오시는길</a>
 
-  <div class="mmenu-divider"></div>
-  <div class="mmenu-group">장비</div>
-  <a href="equipment-press.html" class="mmenu-sub">프레스</a>
-  <a href="equipment-laser.html" class="mmenu-sub">레이저</a>
-  <a href="equipment-welding.html" class="mmenu-sub">용접 및 기타장비</a>
+  <div class="mm-cat">제품</div>
+  <a href="product-rail.html" class="mm-item">철도차량 부품</a>
+  <a href="product-defense.html" class="mm-item">방산 부품</a>
+  <a href="product-plant.html" class="mm-item">산업플랜트</a>
+  <a href="product-etc.html" class="mm-item">기타</a>
 
-  <div class="mmenu-divider"></div>
-  <a href="rd.html" class="mmenu-link">R&amp;D</a>
+  <div class="mm-cat">장비</div>
+  <a href="equipment-press.html" class="mm-item">프레스</a>
+  <a href="equipment-laser.html" class="mm-item">레이저</a>
+  <a href="equipment-welding.html" class="mm-item">용접 및 기타장비</a>
 
-  <div class="mmenu-divider"></div>
-  <div class="mmenu-group">지속가능경영</div>
-  <a href="ethics.html" class="mmenu-sub">윤리경영</a>
-  <a href="esg.html" class="mmenu-sub">ESG경영</a>
-  <a href="safety.html" class="mmenu-sub">안전/보건경영</a>
-  <a href="coexistence.html" class="mmenu-sub">상생경영</a>
-  <a href="environment.html" class="mmenu-sub">환경경영</a>
-  <a href="cyber.html" class="mmenu-sub">사이버신문고</a>
+  <a href="rd.html" class="mm-main">R&amp;D</a>
 
-  <div class="mmenu-divider"></div>
-  <a href="recruit.html" class="mmenu-link">인재채용</a>
+  <div class="mm-cat">지속가능경영</div>
+  <a href="ethics.html" class="mm-item">윤리경영</a>
+  <a href="esg.html" class="mm-item">ESG경영</a>
+  <a href="safety.html" class="mm-item">안전/보건경영</a>
+  <a href="coexistence.html" class="mm-item">상생경영</a>
+  <a href="environment.html" class="mm-item">환경경영</a>
+  <a href="cyber.html" class="mm-item">사이버신문고</a>
 
-  <a href="contact.html" class="mmenu-cta">문의하기</a>
+  <a href="recruit.html" class="mm-main">인재채용</a>
+  <a href="contact.html" class="mm-btn">문의하기</a>
 </div>
 
 <script>
-if (window.innerWidth <= 900) {
-  document.getElementById('hamburgerBtn').style.display = 'flex';
-}
+if (window.innerWidth <= 900) document.getElementById('hamburgerBtn').style.display = 'flex';
 window.addEventListener('resize', function() {
-  var btn = document.getElementById('hamburgerBtn');
-  var menu = document.getElementById('mobileMenu');
-  if (window.innerWidth > 900) {
-    btn.style.display = 'none';
-    menu.style.display = 'none';
-  } else {
-    btn.style.display = 'flex';
-  }
+  if (window.innerWidth > 900) { document.getElementById('hamburgerBtn').style.display = 'none'; closeMenu(); }
+  else { document.getElementById('hamburgerBtn').style.display = 'flex'; }
 });
-function toggleMenu() {
-  var menu = document.getElementById('mobileMenu');
-  menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+function openMenu() {
+  document.getElementById('mobileMenu').style.right = '0';
+  document.getElementById('menuOverlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').style.right = '-310px';
+  document.getElementById('menuOverlay').style.display = 'none';
+  document.body.style.overflow = '';
 }
 </script>
 
