@@ -466,14 +466,16 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
       <a class="nav-link nav-cta" href="contact.html">문의하기</a>
     </nav>
     <!-- 햄버거 버튼 (모바일) -->
-    <button class="hamburger" onclick="toggleMenu()" id="hamburgerBtn">
-      <span></span><span></span><span></span>
+    <button class="hamburger" onclick="toggleMenu()" id="hamburgerBtn" style="display:none;background:none;border:none;">
+      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;margin:4px 0;"></span>
+      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;margin:4px 0;"></span>
+      <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;margin:4px 0;"></span>
     </button>
   </div>
 </header>
 
 <!-- 모바일 메뉴 -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" style="display:none;">
   <div class="mobile-section">회사소개</div>
   <a href="company.html">인사말</a>
   <a href="company-cert.html">주요인증서현황</a>
@@ -504,10 +506,28 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
 </div>
 
 <script>
+// 모바일에서만 햄버거 버튼 표시
+if (window.innerWidth <= 900) {
+  document.getElementById('hamburgerBtn').style.display = 'flex';
+}
+window.addEventListener('resize', function() {
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  if (window.innerWidth > 900) {
+    btn.style.display = 'none';
+    menu.style.display = 'none';
+  } else {
+    btn.style.display = 'flex';
+  }
+});
 function toggleMenu() {
   var menu = document.getElementById('mobileMenu');
   var btn = document.getElementById('hamburgerBtn');
-  menu.classList.toggle('open');
+  if (menu.style.display === 'none' || menu.style.display === '') {
+    menu.style.display = 'block';
+  } else {
+    menu.style.display = 'none';
+  }
   btn.classList.toggle('open');
 }
 </script>
