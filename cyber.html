@@ -65,7 +65,6 @@
 <div class="content-wrap">
   <h2 class="section-title-line">사이버 신문고</h2>
   
-  <!-- 이미지 삽입 구간 -->
   <div class="cyber-banner" style="margin-bottom: 40px; width: 100%; overflow: hidden; border-radius: 8px;">
     <img src="images/uploads/사이버신문고_ESG 1.png" alt="사이버신문고 배너" style="width: 100%; height: 150px; display: block; object-fit: cover;">
   </div>
@@ -83,7 +82,6 @@
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
-
     <div>
       <div class="cyber-box"><h4>제보 유형</h4><ul>
         <li>반부패·뇌물·횡령수수·내부정보 활용</li>
@@ -106,7 +104,6 @@
           <p style="font-size:12px;color:#5a6a80">신청폼 작성 후 전송하시면 접수 처리됩니다</p>
         </div>
 
-        <!-- [수정완료] 첨부파일 정상 전송을 위한 enctype 추가 -->
         <form name="cyber-report" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" id="reportForm">
           <input type="hidden" name="form-name" value="cyber-report">
           <p style="display:none"><input name="bot-field"></p>
@@ -184,7 +181,6 @@
   </div>
 </footer>
 
-<!-- [수정완료] 파일 첨부 시에도 Netlify 전송 규격이 깨지지 않도록 비동기 fetch 코드를 고도화했습니다. -->
 <script>
 document.getElementById('reportForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -200,7 +196,7 @@ document.getElementById('reportForm').addEventListener('submit', function(e) {
       form.style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
     } else {
-      throw new Error('Netlify Server Response Error');
+      throw new Error('Netlify Form Error');
     }
   })
   .catch(function() {
