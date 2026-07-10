@@ -426,13 +426,8 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   .hero-content { padding: 0 24px; margin-bottom: 100px; }
   .hero-title { font-size: 64px; }
   .hero-sub { font-size: 13px; }
-  
   .hero-btns .btn-primary,
-  .hero-btns .btn-outline { 
-  padding: 11px 10px;    /* 💡 버튼 안쪽 여백을 줄여서 자리를 확보합니다 */
-  font-size: 12px;       /* 💡 글자 크기를 살짝 줄입니다 */
-  white-space: nowrap;   /* 💡 글자가 아래로 깨져서 내려가는 것을 막습니다 */
-}
+  .hero-btns .btn-outline { padding: 11px 22px; font-size: 13px; }
 
   /* 통계바 - 모바일에서 2x2 그리드로 */
   .hero-stats {
@@ -541,35 +536,6 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   </div>
 </header>
 
-<section id="main-hero">
-  <div class="slider-bg">
-    <div class="slide active" style="background-image: url('images/main-train.jpg');"></div>
-  </div>
-  
-  <div class="hero-overlay"></div>
-  
-  <div class="hero-content">
-    <div class="hero-tag">
-      <span class="dot-accent"></span> 전문적인 산업기계 생산
-    </div>
-    
-    <h2 class="hero-title">HYUN<br>SUNG</h2>
-    
-    <p class="hero-sub">
-      철도차량, 방산, 제철설비, 선박부품 및 산업기계를<br>
-      전문적으로 생산하며 "고객감동"을 실현할 것을 약속드립니다.
-    </p>
-    
-    <div class="hero-btns">
-      <a class="btn-primary" href="product.html">제품 보기</a>
-      <a class="btn-outline" href="contact.html">상담 문의</a>
-      <a class="btn-outline" href="visit.html">방문예약</a>
-    </div>
-  </div>
-</section>
-
-
-  
 <!-- 어두운 배경 오버레이 -->
 <div id="menuOverlay" onclick="closeMenu()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;"></div>
 
@@ -645,7 +611,29 @@ function closeMenu() {
 </script>
 
 <!-- MAIN HERO -->
-
+<section id="main-hero">
+  <div class="slider-bg">
+    <div class="slide active" style="background-image:url('images/slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('images/slide2.jpg')"></div>
+    <div class="slide" style="background-image:url('images/slide3.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot-accent"></span>
+      전문적인 산업기계 생산
+    </div>
+    <h1 class="hero-title">
+      <span class="hs">HYUN</span><br>SUNG
+    </h1>
+    <p class="hero-sub">
+      철도차량, 방산, 제철설비, 선박부품 및 산업기계를<br>
+      전문적으로 생산하며 "고객감동"을 실현할 것을 약속드립니다.
+    </p>
+    <div class="hero-btns">
+      <a href="product.html" class="btn-primary">제품 보기</a>
+      <a href="contact.html" class="btn-outline">상담 문의</a>
+    </div>
     <div class="slider-dots">
       <span class="sdot active" onclick="goSlide(0)"></span>
       <span class="sdot" onclick="goSlide(1)"></span>
