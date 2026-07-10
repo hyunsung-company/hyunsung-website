@@ -909,5 +909,22 @@ if (window.netlifyIdentity) {
   });
 }
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // CSS로 만든 가짜 버튼 기능 활성화
+    const heroBtns = document.querySelector('.hero-btns');
+    if (heroBtns) {
+      heroBtns.addEventListener('click', function(e) {
+        // 정확히 가짜 버튼(::after 구역)이 위치한 곳을 눌렀을 때만 작동
+        if (e.target === heroBtns && e.offsetX > heroBtns.clientWidth * 0.6) {
+          window.location.href = "https://hyunsung-website.pages.dev/visit";
+        }
+      });
+    }
+  });
+</script>
+
+  
 </body>
 </html>
