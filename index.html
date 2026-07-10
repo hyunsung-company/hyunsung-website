@@ -423,28 +423,48 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   .logo-text .kr { font-size: 11px; letter-spacing: 1px; }
 
 
- /* 히어로 */
+
+  
+
+
+/* 히어로 */
   .hero-content { padding: 0 24px; margin-bottom: 100px; }
   .hero-title { font-size: 64px; }
   .hero-sub { font-size: 13px; }
   
-  /* 💡 두 개로 늘어난 버튼을 제자리로 돌리고, 숨어있던 방문예약 버튼을 강제로 끌어올리는 핵심 코드 */
+  /* 💡 모바일에서 3개의 버튼이 한 줄로 이쁘게 정렬되도록 제어 */
   .hero-btns {
     display: flex !important;
-    flex-direction: row !important;  /* 버튼들이 무조건 한 줄로 나란히 서게 만듭니다 */
-    flex-wrap: nowrap !important;    /* 아래로 절대 떨어지지 않게 고정합니다 */
-    gap: 6px !important;             /* 버튼 사이의 간격을 아주 좁게 만듭니다 */
+    gap: 6px !important;              /* 버튼 사이의 간격을 좁힙니다 */
     width: 100% !important;
   }
-  
   .hero-btns .btn-primary,
   .hero-btns .btn-outline { 
-    flex: 1 !important;              /* 3개의 버튼이 화면 폭을 정확히 3등분하여 나눠 갖습니다 */
-    padding: 11px 4px !important;    /* 버튼 내부 여백을 최소화하여 글자가 안 잘리게 합니다 */
-    font-size: 11px !important;      /* 모바일 가로폭에 맞춰 글자 크기를 조절합니다 */
-    white-space: nowrap !important;  /* 글자가 밑으로 깨져서 내려가는 것을 막습니다 */
-    text-align: center !important;   /* 글자가 가운데에 이쁘게 오도록 합니다 */
+    flex: 1 !important;               /* 버튼들이 가로폭을 균등하게 나눠 가집니다 */
+    padding: 11px 4px !important;     /* 글자가 깨지지 않게 좌우 여백 조정 */
+    font-size: 11.5px !important;     /* 모바일 화면용 글자 크기 */
+    white-space: nowrap !important;   /* 줄바꿈 금지 */
+    text-align: center !important;
   }
+
+  /* 💡 PC에는 없고, 오직 모바일 화면에서만 [방문예약] 버튼을 강제로 만들어내는 코드 */
+  .hero-btns::after {
+    content: "방문예약" !important;   /* 강제로 글자를 집어넣습니다 */
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    color: rgba(255,255,255,0.85) !important;
+    border-radius: 4px !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+  }
+
+
+
+
   
 
   /* 통계바 - 모바일에서 2x2 그리드로 */
