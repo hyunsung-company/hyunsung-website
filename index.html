@@ -352,6 +352,43 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
 .timeline-month { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 40px; }
 .timeline-content { font-size: 13px; color: #5a6a80; line-height: 1.6; }
 
+
+/* PC용 방문예약 버튼 디자인 (테두리 스타일) */
+.nav-cta-outline {
+  border: 1px solid rgba(255,255,255,0.4); 
+  color: rgba(255,255,255,0.9) !important;
+  padding: 9px 20px; 
+  border-radius: 4px; 
+  margin-left: 12px;
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: 18px; 
+  letter-spacing: 1.5px;
+  border-bottom: none !important; 
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.nav-cta-outline:hover { 
+  border-color: white; 
+  color: white !important; 
+  background: rgba(255,255,255,0.06); 
+}
+
+/* 💡 모바일 전용 스타일 (모바일 메뉴창 안에서 어색하지 않게 정렬) */
+@media (max-width: 900px) { 
+  /* 모바일 메뉴창 안에서는 테두리를 없애고 다른 메뉴들과 똑같은 크기로 맞춥니다 */
+  .mobile-menu-inner .nav-cta-outline {
+    border: none !important;
+    background: none !important;
+    padding: 12px 20px !important;
+    margin-left: 0 !important;
+    font-size: 16px !important;
+    color: var(--text) !important;
+    display: block !important;
+  }
+}
+  
 /* MOBILE */
 @media (max-width: 900px) {
   nav { display: none; }
