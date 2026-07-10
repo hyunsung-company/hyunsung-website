@@ -422,12 +422,27 @@ footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0
   /* 헤더 로고 */
   .logo-text .kr { font-size: 11px; letter-spacing: 1px; }
 
-  /* 히어로 */
+
+ /* 히어로 */
   .hero-content { padding: 0 24px; margin-bottom: 100px; }
   .hero-title { font-size: 64px; }
   .hero-sub { font-size: 13px; }
+  
+  /* 💡 아래 두 구역으로 교체해 줍니다 */
+  .hero-btns {
+    display: flex !important;
+    gap: 6px !important;              /* 버튼 사이의 간격을 좁힙니다 */
+  }
   .hero-btns .btn-primary,
-  .hero-btns .btn-outline { padding: 11px 22px; font-size: 13px; }
+  .hero-btns .btn-outline { 
+    padding: 11px 8px !important;    /* 버튼 안쪽 여백을 좁혀 자리를 만듭니다 */
+    font-size: 11px !important;      /* 글자 크기를 살짝 줄입니다 */
+    white-space: nowrap !important;  /* 글자가 밑으로 깨져서 내려가지 않게 막습니다 */
+    flex: 1 !important;              /* 3개의 버튼이 화면 폭에 맞춰 균등하게 나눠 가집니다 */
+    text-align: center !important;
+  }
+
+  
 
   /* 통계바 - 모바일에서 2x2 그리드로 */
   .hero-stats {
