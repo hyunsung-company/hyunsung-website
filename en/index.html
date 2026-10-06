@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYUN SUNG Co., Ltd. | Rolling Stock, Defense &amp; Industrial Plant Parts</title>
+<meta name="description" content="HYUN SUNG Co., Ltd. – Korean manufacturer of railway vehicle parts, defense parts and industrial plant equipment, based in Gimhae, Gyeongnam. Founded 1988.">
+<link rel="canonical" href="https://www.hskiup.co.kr/en/">
+<link rel="alternate" hreflang="ko" href="https://www.hskiup.co.kr/">
+<link rel="alternate" hreflang="en" href="https://www.hskiup.co.kr/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.hskiup.co.kr/">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --steel: #1c2e4a;
+  --accent: #e8601c;
+  --light: #f5f6f8;
+  --white: #ffffff;
+  --gray: #8a9ab0;
+  --text: #1a2535;
+  --border: #e5eaf0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+/* HEADER */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,22,40,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  height: 70px;
+}
+.header-inner {
+  max-width: 1400px; margin: 0 auto; padding: 0 40px;
+  height: 100%; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-mark {
+  width: 38px; height: 38px; background: var(--accent); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue'; color: white; font-size: 20px;
+}
+.logo-text .en { font-family: 'Bebas Neue'; color: white; font-size: 26px; letter-spacing: 3px; display: block; }
+.logo-text .kr { font-family: 'Noto Sans KR'; color: white; font-size: 13px; letter-spacing: 2px; font-weight: 500; display: block; }
+
+/* MEGA MENU */
+nav { display: flex; gap: 4px; align-items: center; height: 100%; }
+.nav-item { position: relative; height: 100%; display: flex; align-items: center; }
+.nav-link {
+  color: rgba(255,255,255,0.75); text-decoration: none;
+  font-family: 'Bebas Neue'; font-size: 18px; letter-spacing: 1.5px;
+  padding: 0 18px; height: 100%; display: flex; align-items: center;
+  transition: color 0.2s; white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover, .nav-link.active { color: white; border-bottom-color: var(--accent); }
+.dropdown {
+  position: absolute; top: 70px; left: 0;
+  background: white; border-top: 2px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  min-width: 160px; z-index: 999;
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: all 0.2s;
+}
+.nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown a {
+  display: block; padding: 12px 20px;
+  font-size: 13px; color: var(--text); text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s, color 0.15s;
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { background: var(--light); color: var(--accent); }
+.nav-cta {
+  background: var(--accent); color: white !important;
+  padding: 9px 20px; border-radius: 4px; margin-left: 12px;
+  font-family: 'Bebas Neue'; font-size: 18px; letter-spacing: 1.5px; border-bottom: none !important;
+}
+.nav-cta:hover { background: #c9541a !important; }
+
+/* PAGE HERO */
+.page-hero {
+  margin-top: 70px;
+  background: linear-gradient(135deg, var(--navy) 0%, #0e2040 100%);
+  padding: 60px 40px;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.page-hero-inner { max-width: 1400px; margin: 0 auto; position: relative; }
+.page-hero .breadcrumb { color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.page-hero .breadcrumb span { color: var(--accent); }
+.page-hero h1 { font-family: 'Bebas Neue'; font-size: 52px; color: white; letter-spacing: 2px; line-height: 1; }
+.page-hero p { color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 10px; font-weight: 300; }
+
+/* SUB NAV */
+.sub-nav {
+  background: white; border-bottom: 1px solid var(--border);
+  position: sticky; top: 70px; z-index: 100;
+}
+.sub-nav-inner {
+  max-width: 1400px; margin: 0 auto; padding: 0 40px;
+  display: flex; gap: 0;
+}
+.sub-nav a {
+  display: block; padding: 16px 24px;
+  font-size: 13px; color: #6a7a90; text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s; white-space: nowrap;
+}
+.sub-nav a:hover, .sub-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* CONTENT */
+.content-wrap { max-width: 1400px; margin: 0 auto; padding: 60px 40px; }
+.section-title-line {
+  font-size: 24px; font-weight: 700; color: var(--navy);
+  padding-bottom: 16px; margin-bottom: 32px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+.section-title-line::after {
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 60px; height: 2px; background: var(--accent);
+}
+
+/* FOOTER */
+footer { background: #060f1c; padding: 60px 40px 40px; color: rgba(255,255,255,0.4); margin-top: 80px; }
+.footer-inner { max-width: 1400px; margin: 0 auto; }
+.footer-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 32px;
+}
+.footer-col h5 { color: rgba(255,255,255,0.7); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+.footer-col a:hover { color: rgba(255,255,255,0.7); }
+.footer-info p { font-size: 13px; line-height: 1.8; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+
+/* HERO MAIN */
+#main-hero {
+  position: relative;
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* 전체화면 슬라이드 배경 */
+.slider-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.slide {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+.slide.active { opacity: 1; }
+
+/* 왼쪽 그라디언트 오버레이 */
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(8,16,32,0.88) 0%,
+    rgba(8,16,32,0.72) 40%,
+    rgba(8,16,32,0.25) 70%,
+    rgba(8,16,32,0.0) 100%
+  );
+}
+
+/* 왼쪽 텍스트 콘텐츠 */
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 80px;
+  max-width: 600px;
+  margin-bottom: 80px;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232,96,28,0.18);
+  border: 1px solid rgba(232,96,28,0.45);
+  color: #e8601c;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  padding: 7px 16px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.dot-accent {
+  width: 6px; height: 6px;
+  background: #e8601c;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 9vw, 120px);
+  color: white;
+  line-height: 0.88;
+  letter-spacing: 6px;
+  margin-bottom: 24px;
+}
+.hero-title .hs { color: #e8601c; }
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 2;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.hero-btns .btn-primary {
+  background: #e8601c; color: white;
+  padding: 13px 32px; border-radius: 4px;
+  text-decoration: none; font-size: 14px; font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+.hero-btns .btn-primary:hover { background: #c9541a; transform: translateY(-2px); }
+.hero-btns .btn-outline {
+  border: 1px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.85);
+  padding: 13px 32px; border-radius: 4px;
+  text-decoration: none; font-size: 14px;
+  transition: all 0.2s;
+}
+.hero-btns .btn-outline:hover { border-color: white; color: white; transform: translateY(-2px); }
+
+/* 인디케이터 */
+.slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sdot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.sdot.active { background: #e8601c; transform: scale(1.3); }
+.pause-btn {
+  color: rgba(255,255,255,0.4);
+  font-size: 10px;
+  cursor: pointer;
+  margin-left: 6px;
+  user-select: none;
+  transition: color 0.2s;
+}
+.pause-btn:hover { color: white; }
+
+/* 하단 통계 */
+.hero-stats {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 3;
+  background: rgba(8,16,32,0.82);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 18px 0;
+  height: 80px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 60px;
+}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: white;
+  line-height: 1;
+}
+.stat-num span { color: #e8601c; font-size: 24px; }
+.stat-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* PRODUCT CARDS */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.card {
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s; text-decoration: none; color: var(--text);
+}
+.card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.card-thumb {
+  height: 180px; background: var(--steel);
+  display: flex; align-items: center; justify-content: center; font-size: 56px;
+}
+.card-body { padding: 24px; }
+.card-tag { display: inline-block; background: rgba(232,96,28,0.1); color: var(--accent); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; margin-bottom: 10px; }
+.card-body h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; color: var(--navy); }
+.card-body p { font-size: 13px; color: #6a7a90; line-height: 1.7; }
+
+/* INFO BOXES */
+.info-box-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.info-box { background: var(--light); border-radius: 8px; padding: 28px; border-left: 3px solid var(--accent); }
+.info-box h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.info-box p, .info-box li { font-size: 13px; color: #5a6a80; line-height: 1.8; }
+.info-box ul { padding-left: 16px; }
+
+/* TABLE */
+.info-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+.info-table th, .info-table td { padding: 14px 20px; border: 1px solid var(--border); font-size: 14px; text-align: left; }
+.info-table th { background: var(--light); color: var(--navy); font-weight: 600; width: 180px; }
+
+/* RECRUIT */
+.talent-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+.talent-card { background: var(--navy); border-radius: 8px; padding: 28px 20px; text-align: center; }
+.talent-num { font-family: 'Bebas Neue'; font-size: 36px; color: var(--accent); }
+.talent-title { color: white; font-size: 15px; font-weight: 600; margin: 8px 0; }
+.talent-desc { color: rgba(255,255,255,0.45); font-size: 12px; line-height: 1.6; }
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.edu-card { border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+.edu-icon { font-size: 32px; margin-bottom: 12px; }
+.edu-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.edu-card p { font-size: 13px; color: #6a7a90; line-height: 1.6; }
+
+/* TIMELINE */
+.timeline { margin-top: 32px; }
+.timeline-year { font-family: 'Bebas Neue'; font-size: 36px; color: var(--accent); margin-bottom: 12px; margin-top: 32px; }
+.timeline-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.timeline-month { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 40px; }
+.timeline-content { font-size: 13px; color: #5a6a80; line-height: 1.6; }
+
+
+/* PC용 방문예약 버튼 디자인 (오렌지색 채움 스타일) */
+.nav-cta-outline {
+  background: var(--accent) !important;
+  color: white !important;
+  padding: 9px 20px; 
+  border-radius: 4px; 
+  margin-left: 12px;
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: 18px; 
+  letter-spacing: 1.5px;
+  border-bottom: none !important; 
+  border: none !important;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.nav-cta-outline:hover { 
+  background: #c9541a !important; 
+}
+
+/* 💡 모바일 화면용 (상단 헤더 전용 방문예약 버튼 스타일) */
+.mobile-top-btn {
+  display: none; /* 평소(PC)에는 숨김 */
+}
+
+@media (max-width: 900px) { 
+  /* 모바일 상단 헤더에 강제로 오렌지색 버튼 띄우기 */
+  .mobile-top-btn {
+    display: flex !important;
+    position: absolute;
+    right: 70px; /* 오른쪽 삼선 버튼과 [상담문의] 왼쪽에 배치 */
+    top: 17px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1001; /* 삼선 버튼과 겹치지 않게 레이어 순서 지정 */
+  }
+  
+  /* 모바일 내부 메뉴창 안에 들어갈 방문예약 버튼 스타일 */
+  .mobile-menu-inner .nav-cta-outline,
+  #mobileMenu .nav-cta-outline {
+    background: var(--accent) !important;
+    color: white !important;
+    padding: 12px 20px !important;
+    margin: 10px 20px !important; /* 메뉴 안에서 다른 버튼들과 간격 유지 */
+    border-radius: 4px !important;
+    display: block !important;
+    text-align: center;
+    font-size: 16px !important;
+  }
+}
+  
+/* MOBILE */
+@media (max-width: 900px) {
+  nav { display: none; }
+  .card-grid, .info-box-grid, .talent-grid, .edu-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .content-wrap { padding: 40px 20px; }
+
+  /* 헤더 로고 */
+  .logo-text .kr { font-size: 11px; letter-spacing: 1px; }
+
+
+
+  
+
+
+/* 히어로 */
+  .hero-content { padding: 0 24px; margin-bottom: 100px; }
+  .hero-title { font-size: 64px; }
+  .hero-sub { font-size: 13px; }
+  
+  /* 💡 모바일에서 3개의 버튼이 한 줄로 이쁘게 정렬되도록 제어 */
+  .hero-btns {
+    display: flex !important;
+    gap: 6px !important;              /* 버튼 사이의 간격을 좁힙니다 */
+    width: 100% !important;
+  }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline { 
+    flex: 1 !important;               /* 버튼들이 가로폭을 균등하게 나눠 가집니다 */
+    padding: 11px 4px !important;     /* 글자가 깨지지 않게 좌우 여백 조정 */
+    font-size: 11.5px !important;     /* 모바일 화면용 글자 크기 */
+    white-space: nowrap !important;   /* 줄바꿈 금지 */
+    text-align: center !important;
+  }
+
+  /* 💡 PC에는 없고, 오직 모바일 화면에서만 [방문예약] 버튼을 강제로 만들어내는 코드 */
+  .hero-btns::after {
+    content: "방문예약" !important;   /* 강제로 글자를 집어넣습니다 */
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    color: rgba(255,255,255,0.85) !important;
+    border-radius: 4px !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+  }
+
+
+
+
+  
+
+  /* 통계바 - 모바일에서 2x2 그리드로 */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    padding: 12px 0;
+  }
+  .stat-item { padding: 10px 16px; }
+  .stat-num { font-size: 28px; }
+  .stat-label { font-size: 9px; }
+  .stat-divider { display: none; }
+
+  /* 납품현황 사진 - 모바일에서 1열 */
+  div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 장비 카드 - 모바일에서 세로 */
+  .equipment-item {
+    flex-direction: column !important;
+  }
+  .equipment-item img {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  /* 사업장/RD 사진 카드 */
+  div[style*="display:flex;gap:32px"] {
+    flex-direction: column !important;
+  }
+  div[style*="display:flex;gap:32px"] img {
+    width: 100% !important;
+    height: 220px !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/lang.css">
+</head>
+<body class="en-home">
+<header class="en-site">
+  <div class="header-inner">
+    <a class="logo" href="/en/">
+      <img src="/images/logo-mark.png" alt="Hyun Sung logo" style="width:44px;height:44px;object-fit:contain;background:white;border-radius:6px;padding:2px;flex-shrink:0;">
+      <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">Co., Ltd.</span></div>
+    </a>
+    <nav>
+      <div class="nav-item"><a class="nav-link" href="/en/company.html">Company</a><div class="dropdown"><a href="/en/company.html">CEO Message</a><a href="/en/company-cert.html">Certifications</a><a href="/en/company-sites.html">Facilities</a><a href="/en/company-history.html">History</a><a href="/en/company-org.html">Organization</a><a href="/en/company-location.html">Location</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/en/product.html">Products</a><div class="dropdown"><a href="/en/product-rail.html">Rolling Stock Parts</a><a href="/en/product-defense.html">Defense Parts</a><a href="/en/product-plant.html">Industrial Plant</a><a href="/en/product-etc.html">Other</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/en/equipment.html">Equipment</a><div class="dropdown"><a href="/en/equipment-press.html">Press</a><a href="/en/equipment-laser.html">Laser</a><a href="/en/equipment-welding.html">Welding & Other</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/en/rd.html">R&amp;D</a></div>
+      <a class="nav-link nav-cta" href="/en/contact.html">Contact</a>
+      <div class="lang-switch" role="group" aria-label="Language"><a href="/" hreflang="ko" lang="ko">KO</a><span class="sep">|</span><span class="on" aria-current="true">EN</span></div>
+    </nav>
+    <a class="lang-chip-m has-menu" href="/" hreflang="ko" lang="ko">KO</a>
+    <button class="en-burger" onclick="enOpenMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="en-menu-overlay" id="enOverlay" onclick="enCloseMenu()"></div>
+<div class="en-menu" id="enMenu">
+  <div class="mm-head"><span style="font-family:'Bebas Neue';color:white;font-size:20px;letter-spacing:3px;">HYUN SUNG</span><button class="mm-close" onclick="enCloseMenu()" aria-label="Close menu">&#10005;</button></div>
+  <div class="mm-cat">Company</div>
+  <a href="/en/company.html" class="mm-item">CEO Message</a><a href="/en/company-cert.html" class="mm-item">Certifications</a><a href="/en/company-sites.html" class="mm-item">Facilities</a><a href="/en/company-history.html" class="mm-item">History</a><a href="/en/company-org.html" class="mm-item">Organization</a><a href="/en/company-location.html" class="mm-item">Location</a>
+  <div class="mm-cat">Products</div>
+  <a href="/en/product-rail.html" class="mm-item">Rolling Stock Parts</a><a href="/en/product-defense.html" class="mm-item">Defense Parts</a><a href="/en/product-plant.html" class="mm-item">Industrial Plant</a><a href="/en/product-etc.html" class="mm-item">Other</a>
+  <div class="mm-cat">Equipment</div>
+  <a href="/en/equipment-press.html" class="mm-item">Press</a><a href="/en/equipment-laser.html" class="mm-item">Laser</a><a href="/en/equipment-welding.html" class="mm-item">Welding & Other</a>
+  <a href="/en/rd.html" class="mm-main">R&amp;D</a>
+  <a href="/en/contact.html" class="mm-btn">Contact</a>
+  <a href="/" class="mm-lang" hreflang="ko" lang="ko">한국어 / Korean</a>
+</div>
+<script>
+function enOpenMenu(){document.getElementById('enMenu').classList.add('open');document.getElementById('enOverlay').style.display='block';document.body.style.overflow='hidden';}
+function enCloseMenu(){document.getElementById('enMenu').classList.remove('open');document.getElementById('enOverlay').style.display='none';document.body.style.overflow='';}
+</script>
+
+<!-- MAIN HERO -->
+<section id="main-hero">
+  <div class="slider-bg">
+    <div class="slide active" style="background-image:url('/images/slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('/images/slide2.jpg')"></div>
+    <div class="slide" style="background-image:url('/images/slide3.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span class="dot-accent"></span>PROFESSIONAL INDUSTRIAL MANUFACTURING</div>
+    <h1 class="hero-title"><span class="hs">HYUN</span><br>SUNG</h1>
+    <p class="hero-sub">We specialize in railway vehicle parts, defense parts, steel-mill equipment, shipbuilding parts and industrial machinery &ndash; and we promise to deliver &ldquo;customer delight.&rdquo;</p>
+    <div class="hero-btns">
+      <a href="/en/product.html" class="btn-primary">Our Products</a>
+      <a href="/en/contact.html" class="btn-outline">Contact Us</a>
+    </div>
+    <div class="slider-dots">
+      <span class="sdot active" onclick="goSlide(0)"></span>
+      <span class="sdot" onclick="goSlide(1)"></span>
+      <span class="sdot" onclick="goSlide(2)"></span>
+      <span class="pause-btn" onclick="togglePause()" id="pauseBtn">&#10074;&#10074;</span>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">30<span>+</span></div><div class="stat-label">YEARS OF HISTORY</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">3<span>+</span></div><div class="stat-label">BUSINESS SECTORS</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">ISO</div><div class="stat-label">QUALITY CERTIFIED</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">GIMHAE</div><div class="stat-label">GYEONGNAM, KOREA</div></div>
+  </div>
+</section>
+<script>
+var current = 0, total = 3, paused = false, timer;
+function goSlide(n) {
+  document.querySelectorAll('.slide')[current].classList.remove('active');
+  document.querySelectorAll('.sdot')[current].classList.remove('active');
+  current = n;
+  document.querySelectorAll('.slide')[current].classList.add('active');
+  document.querySelectorAll('.sdot')[current].classList.add('active');
+}
+function nextSlide() { goSlide((current + 1) % total); }
+function startTimer() { timer = setInterval(nextSlide, 3000); }
+function togglePause() {
+  paused = !paused;
+  if (paused) { clearInterval(timer); document.getElementById('pauseBtn').textContent = '\u25B6'; }
+  else { startTimer(); document.getElementById('pauseBtn').textContent = '\u275A\u275A'; }
+}
+startTimer();
+</script>
+
+<!-- OUR BUSINESS -->
+<section style="padding:80px 40px;background:var(--light);">
+  <div style="max-width:1400px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="font-size:11px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;">Our Business</div>
+      <h2 style="font-family:'Bebas Neue';font-size:48px;color:var(--navy);letter-spacing:1px;">What We Make</h2>
+    </div>
+    <div class="card-grid">
+      <a href="/en/product-rail.html" class="card"><div class="card-thumb" style="padding:0;overflow:hidden;"><img src="/images/GTX-A노선 전동차 120량 TM DUCT, 기장, 대차, 의장 등.png" alt="Rolling stock parts" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="card-body"><span class="card-tag">Product</span><h3>Rolling Stock Parts</h3><p>High-precision exterior and structural parts for railway vehicles.</p></div></a>
+      <a href="/en/product-defense.html" class="card"><div class="card-thumb" style="padding:0;overflow:hidden;"><img src="/images/외부상자.png" alt="Defense parts" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="card-body"><span class="card-tag">Product</span><h3>Defense Parts</h3><p>Highly reliable precision parts for the defense industry.</p></div></a>
+      <a href="/en/product-plant.html" class="card"><div class="card-thumb" style="padding:0;overflow:hidden;"><img src="/images/KAWASAKI HEAVY INDUSTRIES, LTD. - SINO CLEANING.png" alt="Industrial plant components" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="card-body"><span class="card-tag">Product</span><h3>Industrial Plant</h3><p>Steel-mill equipment, shipbuilding parts and other industrial plant components.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HYUN SUNG -->
+<section style="padding:80px 40px;background:white;">
+  <div style="max-width:1400px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:8px;">
+      <div style="font-size:11px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;">About Us</div>
+      <h2 style="font-family:'Bebas Neue';font-size:48px;color:var(--navy);letter-spacing:1px;">Why Hyun Sung</h2>
+    </div>
+    <div class="en-why">
+      <div class="info-box"><h4>Since 1988</h4><p>Decades of manufacturing experience in railway vehicles, defense, steel-mill equipment, shipbuilding parts and industrial machinery.</p></div>
+      <div class="info-box"><h4>Certified welding quality</h4><p>EN 15085-2 (CL1) and ISO 3834-2 certified by T&Uuml;V NORD, plus a special process certificate for arc welding (GTAW) of steel.</p></div>
+      <div class="info-box"><h4>In-house equipment</h4><p>Fiber lasers up to 12 kW, hydraulic presses up to 250 tons, and CO2, TIG and laser welding systems.</p></div>
+      <div class="info-box"><h4>Two plants in Gyeongnam</h4><p>The Jillye headquarters in Gimhae and the Haman plant, on about 27,400 m&sup2; of land in total.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:36px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="/en/company-cert.html" class="btn-primary" style="background:var(--navy);color:#fff;padding:12px 28px;border-radius:4px;text-decoration:none;font-size:14px">View certifications</a>
+      <a href="/en/equipment.html" class="btn-primary" style="background:var(--navy);color:#fff;padding:12px 28px;border-radius:4px;text-decoration:none;font-size:14px">View equipment</a>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section style="padding:0 40px 80px;background:white;">
+  <div style="max-width:1400px;margin:0 auto;">
+    <div class="en-sites">
+      <div class="en-site-card"><img src="/images/진례본사.png" alt="Jillye Headquarters"><div><h3>Jillye Headquarters</h3><p>Railway and defense divisions &middot; Gimhae, Gyeongnam</p></div></div>
+      <div class="en-site-card"><img src="/images/함안공장.png" alt="Haman Plant"><div><h3>Haman Plant</h3><p>Railway division &middot; Haman, Gyeongnam</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="en-cta">
+  <h2>Have a project in mind?</h2>
+  <p>Tell us what you need &ndash; we will get back to you promptly.</p>
+  <a href="/en/contact.html">Contact Us</a>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a class="logo" href="/en/" style="display:flex;margin-bottom:16px;margin-left:0">
+          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">Co., Ltd.</span></div>
+        </a>
+        <p style="margin-top:16px">CEO: Choi Seok-rim | Business Reg. No.: 606-81-14505<br>47-36, Gomo-ro 180beon-gil, Jillye-myeon, Gimhae-si, Gyeongsangnam-do, Korea<br>TEL: +82-55-345-0082 | FAX: +82-55-345-0084<br>E-mail: hs@hskiup.co.kr</p>
+      </div>
+      <div class="footer-col"><h5>Company</h5>
+        <a href="/en/company.html">CEO Message</a>
+        <a href="/en/company-cert.html">Certifications</a>
+        <a href="/en/company-history.html">History</a>
+        <a href="/en/company-location.html">Location</a>
+      </div>
+      <div class="footer-col"><h5>Products &amp; Equipment</h5>
+        <a href="/en/product-rail.html">Rolling Stock Parts</a>
+        <a href="/en/product-defense.html">Defense Parts</a>
+        <a href="/en/product-plant.html">Industrial Plant</a>
+        <a href="/en/equipment-press.html">Press</a>
+        <a href="/en/equipment-laser.html">Laser</a>
+      </div>
+      <div class="footer-col"><h5>Contact</h5>
+        <a href="/en/contact.html">Contact Us</a>
+        <a href="/en/rd.html">R&amp;D</a>
+        <a href="/" hreflang="ko" lang="ko">한국어 사이트 (Korean)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © Hyun Sung Co., Ltd. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

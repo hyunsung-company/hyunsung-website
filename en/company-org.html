@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organization | HYUN SUNG Co., Ltd.</title>
+<meta name="description" content="Organization chart of HYUN SUNG Co., Ltd.">
+<link rel="canonical" href="https://www.hskiup.co.kr/en/company-org.html">
+<link rel="alternate" hreflang="ko" href="https://www.hskiup.co.kr/company-org.html">
+<link rel="alternate" hreflang="en" href="https://www.hskiup.co.kr/en/company-org.html">
+<link rel="alternate" hreflang="x-default" href="https://www.hskiup.co.kr/company-org.html">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/lang.css">
+<style>
+/* 조직도 스타일 */
+.org-wrap { padding: 20px 0 60px; }
+.org-subtitle { font-size:14px; color:#6a7a90; margin-bottom:48px; }
+
+.org-chart { display:flex; flex-direction:column; align-items:center; gap:0; }
+
+/* 박스 공통 */
+.org-box {
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:600; color:white;
+  border-radius:4px; padding:14px 32px; min-width:160px; text-align:center;
+  white-space:nowrap;
+}
+.org-box-top { background:#5b9bd5; min-width:180px; }
+.org-box-mid { background:#5b9bd5; min-width:180px; }
+.org-box-dark { background:#2e75b6; min-width:180px; }
+.org-box-blue { background:#2196f3; min-width:160px; }
+.org-box-sub { background:#f0f0f0; color:#333; font-weight:400; font-size:14px; min-width:140px; padding:10px 24px; }
+
+/* 연결선 */
+.v-line { width:2px; height:36px; background:#aaa; }
+.h-connector { display:flex; align-items:flex-start; position:relative; }
+
+/* 1단: 대표이사 */
+.row-1 { display:flex; justify-content:center; }
+
+/* 2단: 전무이사 + 품질관리부 */
+.row-2-wrap { display:flex; flex-direction:column; align-items:center; }
+.row-2 { display:flex; align-items:flex-start; gap:0; }
+.row-2-left { display:flex; flex-direction:column; align-items:center; }
+.row-2-right { display:flex; flex-direction:column; align-items:center; margin-left:180px; }
+
+/* 수평선 */
+.h-line-wrap { display:flex; align-items:center; }
+.h-line { height:2px; background:#aaa; }
+
+/* 3단: 관리부/생산부/기술부 */
+.row-3-wrap { display:flex; gap:48px; align-items:flex-start; }
+.org-dept { display:flex; flex-direction:column; align-items:center; gap:0; }
+.dept-subs { display:flex; flex-direction:column; align-items:center; gap:4px; margin-top:0; }
+</style>
+</head>
+<body>
+<header class="en-site">
+  <div class="header-inner">
+    <a class="logo" href="/en/">
+      <img src="/images/logo-mark.png" alt="Hyun Sung logo" style="width:44px;height:44px;object-fit:contain;background:white;border-radius:6px;padding:2px;flex-shrink:0;">
+      <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">Co., Ltd.</span></div>
+    </a>
+    <nav>
+      <div class="nav-item"><a class="nav-link active" href="/en/company.html">Company</a><div class="dropdown"><a href="/en/company.html">CEO Message</a><a href="/en/company-cert.html">Certifications</a><a href="/en/company-sites.html">Facilities</a><a href="/en/company-history.html">History</a><a href="/en/company-org.html">Organization</a><a href="/en/company-location.html">Location</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/en/product.html">Products</a><div class="dropdown"><a href="/en/product-rail.html">Rolling Stock Parts</a><a href="/en/product-defense.html">Defense Parts</a><a href="/en/product-plant.html">Industrial Plant</a><a href="/en/product-etc.html">Other</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/en/equipment.html">Equipment</a><div class="dropdown"><a href="/en/equipment-press.html">Press</a><a href="/en/equipment-laser.html">Laser</a><a href="/en/equipment-welding.html">Welding & Other</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/en/rd.html">R&amp;D</a></div>
+      <a class="nav-link nav-cta" href="/en/contact.html">Contact</a>
+      <div class="lang-switch" role="group" aria-label="Language"><a href="/company-org.html" hreflang="ko" lang="ko">KO</a><span class="sep">|</span><span class="on" aria-current="true">EN</span></div>
+    </nav>
+    <a class="lang-chip-m has-menu" href="/company-org.html" hreflang="ko" lang="ko">KO</a>
+    <button class="en-burger" onclick="enOpenMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="en-menu-overlay" id="enOverlay" onclick="enCloseMenu()"></div>
+<div class="en-menu" id="enMenu">
+  <div class="mm-head"><span style="font-family:'Bebas Neue';color:white;font-size:20px;letter-spacing:3px;">HYUN SUNG</span><button class="mm-close" onclick="enCloseMenu()" aria-label="Close menu">&#10005;</button></div>
+  <div class="mm-cat">Company</div>
+  <a href="/en/company.html" class="mm-item">CEO Message</a><a href="/en/company-cert.html" class="mm-item">Certifications</a><a href="/en/company-sites.html" class="mm-item">Facilities</a><a href="/en/company-history.html" class="mm-item">History</a><a href="/en/company-org.html" class="mm-item">Organization</a><a href="/en/company-location.html" class="mm-item">Location</a>
+  <div class="mm-cat">Products</div>
+  <a href="/en/product-rail.html" class="mm-item">Rolling Stock Parts</a><a href="/en/product-defense.html" class="mm-item">Defense Parts</a><a href="/en/product-plant.html" class="mm-item">Industrial Plant</a><a href="/en/product-etc.html" class="mm-item">Other</a>
+  <div class="mm-cat">Equipment</div>
+  <a href="/en/equipment-press.html" class="mm-item">Press</a><a href="/en/equipment-laser.html" class="mm-item">Laser</a><a href="/en/equipment-welding.html" class="mm-item">Welding & Other</a>
+  <a href="/en/rd.html" class="mm-main">R&amp;D</a>
+  <a href="/en/contact.html" class="mm-btn">Contact</a>
+  <a href="/company-org.html" class="mm-lang" hreflang="ko" lang="ko">한국어 / Korean</a>
+</div>
+<script>
+function enOpenMenu(){document.getElementById('enMenu').classList.add('open');document.getElementById('enOverlay').style.display='block';document.body.style.overflow='hidden';}
+function enCloseMenu(){document.getElementById('enMenu').classList.remove('open');document.getElementById('enOverlay').style.display='none';document.body.style.overflow='';}
+</script>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="/en/">Home</a> &gt; <a href="/en/company.html">Company</a> &gt; <span>Organization</span></div>
+    <h1>Organization</h1>
+    <p>Striving for customer value through teamwork and creativity.</p>
+  </div>
+</div>
+<div class="sub-nav"><div class="sub-nav-inner"><a href="/en/company.html">CEO Message</a><a href="/en/company-cert.html">Certifications</a><a href="/en/company-sites.html">Facilities</a><a href="/en/company-history.html">History</a><a href="/en/company-org.html" class="active">Organization</a><a href="/en/company-location.html">Location</a></div></div>
+<div class="content-wrap">
+
+<h2 class="section-title-line">Organization Chart</h2>
+<p class="org-subtitle">A company that steadily strives to create customer value through the best teamwork and creativity</p>
+<div class="org-wrap">
+<!-- SVG 조직도 -->
+<svg style="width:100%;max-width:1100px;display:block;margin:0 auto;font-family:'Noto Sans KR',sans-serif" viewbox="-80 0 1160 600" xmlns="http://www.w3.org/2000/svg">
+<!-- 대표이사 → 전무이사 수직선 -->
+<line stroke="#bbb" stroke-width="2" x1="450" x2="450" y1="58" y2="120"></line>
+<!-- 대표이사 → 품질관리부 수평선 -->
+<line stroke="#bbb" stroke-width="2" x1="550" x2="860" y1="34" y2="34"></line>
+<line stroke="#bbb" stroke-width="2" x1="860" x2="860" y1="34" y2="120"></line>
+<!-- 대표이사 → 기업부설연구소 수평선 -->
+<line stroke="#bbb" stroke-width="2" x1="350" x2="40" y1="34" y2="34"></line>
+<line stroke="#bbb" stroke-width="2" x1="40" x2="40" y1="34" y2="120"></line>
+<!-- 전무이사 → 3부서 수평선 -->
+<line stroke="#bbb" stroke-width="2" x1="450" x2="450" y1="178" y2="210"></line>
+<line stroke="#bbb" stroke-width="2" x1="130" x2="770" y1="210" y2="210"></line>
+<line stroke="#bbb" stroke-width="2" x1="130" x2="130" y1="210" y2="230"></line>
+<line stroke="#bbb" stroke-width="2" x1="450" x2="450" y1="210" y2="230"></line>
+<line stroke="#bbb" stroke-width="2" x1="770" x2="770" y1="210" y2="230"></line>
+<!-- 관리부 하위 -->
+<line stroke="#bbb" stroke-width="2" x1="130" x2="130" y1="288" y2="310"></line>
+<line stroke="#bbb" stroke-width="2" x1="130" x2="130" y1="368" y2="390"></line>
+<!-- 생산부 하위 -->
+<line stroke="#bbb" stroke-width="2" x1="450" x2="450" y1="288" y2="310"></line>
+<line stroke="#bbb" stroke-width="2" x1="450" x2="450" y1="368" y2="390"></line>
+<line stroke="#bbb" stroke-width="2" x1="450" x2="450" y1="448" y2="470"></line>
+<!-- 기술부 하위 -->
+<line stroke="#bbb" stroke-width="2" x1="770" x2="770" y1="288" y2="310"></line>
+<line stroke="#bbb" stroke-width="2" x1="770" x2="770" y1="368" y2="390"></line>
+<!-- 대표이사 -->
+<rect fill="#8db4d9" height="48" rx="4" width="200" x="350" y="10"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="450" y="41">CEO</text>
+<!-- 품질관리부 -->
+<rect fill="#2e75b6" height="58" rx="4" width="200" x="760" y="120"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="860" y="156">Quality Control Dept.</text>
+<!-- 기업부설연구소 -->
+<rect fill="#2e75b6" height="58" rx="4" width="200" x="-60" y="120"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="40" y="156">Corporate R&amp;D Center</text>
+<!-- 전무이사 -->
+<rect fill="#5b9bd5" height="58" rx="4" width="200" x="350" y="120"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="450" y="156">Executive Director</text>
+<!-- 관리부 -->
+<rect fill="#2196f3" height="58" rx="4" width="200" x="30" y="230"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="130" y="265">Management Dept.</text>
+<!-- 생산부 -->
+<rect fill="#2196f3" height="58" rx="4" width="200" x="350" y="230"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="450" y="265">Production Dept.</text>
+<!-- 기술부 -->
+<rect fill="#2196f3" height="58" rx="4" width="200" x="670" y="230"></rect>
+<text fill="white" font-size="17" font-weight="600" text-anchor="middle" x="770" y="265">Technology Dept.</text>
+<!-- 관리부 하위 -->
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="30" y="310"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="130" y="345">Sales</text>
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="30" y="390"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="130" y="425">General Affairs · Materials</text>
+<!-- 생산부 하위 -->
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="350" y="310"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="450" y="345">Machining</text>
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="350" y="390"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="450" y="425">Welding · Fabrication</text>
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="350" y="470"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="450" y="505">Assembly</text>
+<!-- 기술부 하위 -->
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="670" y="310"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="770" y="345">Production Engineering</text>
+<rect fill="#e8e8e8" height="58" rx="3" width="200" x="670" y="390"></rect>
+<text fill="#333" font-size="17" text-anchor="middle" x="770" y="425">Design</text>
+</svg>
+</div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a class="logo" href="/en/" style="display:flex;margin-bottom:16px;margin-left:0">
+          <div class="logo-text"><span class="en">HYUN SUNG</span><span class="kr">Co., Ltd.</span></div>
+        </a>
+        <p style="margin-top:16px">CEO: Choi Seok-rim | Business Reg. No.: 606-81-14505<br>47-36, Gomo-ro 180beon-gil, Jillye-myeon, Gimhae-si, Gyeongsangnam-do, Korea<br>TEL: +82-55-345-0082 | FAX: +82-55-345-0084<br>E-mail: hs@hskiup.co.kr</p>
+      </div>
+      <div class="footer-col"><h5>Company</h5>
+        <a href="/en/company.html">CEO Message</a>
+        <a href="/en/company-cert.html">Certifications</a>
+        <a href="/en/company-history.html">History</a>
+        <a href="/en/company-location.html">Location</a>
+      </div>
+      <div class="footer-col"><h5>Products &amp; Equipment</h5>
+        <a href="/en/product-rail.html">Rolling Stock Parts</a>
+        <a href="/en/product-defense.html">Defense Parts</a>
+        <a href="/en/product-plant.html">Industrial Plant</a>
+        <a href="/en/equipment-press.html">Press</a>
+        <a href="/en/equipment-laser.html">Laser</a>
+      </div>
+      <div class="footer-col"><h5>Contact</h5>
+        <a href="/en/contact.html">Contact Us</a>
+        <a href="/en/rd.html">R&amp;D</a>
+        <a href="/company-org.html" hreflang="ko" lang="ko">한국어 사이트 (Korean)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © Hyun Sung Co., Ltd. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
