@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Site Visit Reservation | HYUN SUNG Co., Ltd.</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --graphite:#1C2226;
+    --steel:#3C4B5C;
+    --steel-light:#6B7C8E;
+    --blue:#2E5C8A;
+    --blue-dim:#26496e;
+    --paper:#F3F4F2;
+    --panel:#FFFFFF;
+    --line:#D7DBDD;
+    --amber:#C9781F;
+    --ok:#2E7D5B;
+    --err:#B4392E;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-attachment: fixed;
+    font-family:'Pretendard Variable', 'Pretendard', sans-serif;
+    color:var(--graphite);
+    padding:40px 16px 80px;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .sheet{
+    max-width:640px;
+    margin:0 auto;
+    background:var(--panel);
+    border:1px solid var(--line);
+    position:relative;
+    box-shadow: 0 1px 3px rgba(28,34,38,0.06);
+  }
+  .sheet::before, .sheet::after{
+    content:"";
+    position:absolute;
+    width:14px; height:14px;
+    border-color:var(--steel-light);
+    border-style:solid;
+    opacity:.6;
+  }
+  .sheet::before{ top:-1px; left:-1px; border-width:2px 0 0 2px; }
+  .sheet::after{ bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
+
+  .head{
+    padding:28px 32px 22px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+  }
+  .head-left .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    color:var(--steel-light);
+    text-transform:uppercase;
+    margin:0 0 6px;
+  }
+  .head-left h1{ font-size:22px; font-weight:700; margin:0; letter-spacing:-0.01em; }
+  .head-right{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--steel-light);
+    text-align:right;
+    line-height:1.6;
+    white-space:nowrap;
+    padding-top:2px;
+  }
+  .head-right .doc-id{ color:var(--steel); font-weight:600; }
+
+  .body-pad{ padding:28px 32px 32px; }
+
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    color:var(--blue);
+    text-transform:uppercase;
+    margin:0 0 12px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section-label:not(:first-child){ margin-top:28px; }
+
+  /* ===== 약관 아코디언 ===== */
+  .policy-item{
+    border:1px solid var(--line);
+    border-radius:3px;
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .policy-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:13px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--graphite);
+    background:var(--paper);
+    user-select:none;
+  }
+  .policy-item summary::-webkit-details-marker{ display:none; }
+  .policy-item summary .chev{
+    font-size:11px; color:var(--steel-light); transition:transform .15s ease;
+  }
+  .policy-item[open] summary .chev{ transform:rotate(180deg); }
+  .policy-item .policy-text{
+    padding:14px 16px;
+    font-size:12.5px;
+    line-height:1.75;
+    color:var(--steel);
+    border-top:1px solid var(--line);
+    max-height:180px;
+    overflow-y:auto;
+  }
+  .policy-item .policy-text p{ margin:0 0 9px; }
+  .policy-item .policy-text p:last-child{ margin-bottom:0; }
+  .policy-item .policy-text strong{ color:var(--graphite); }
+
+  .agree-check{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 16px;
+    font-size:13px;
+    font-weight:500;
+    color:var(--steel);
+    border-top:1px solid var(--line);
+    background:#fff;
+    cursor:pointer;
+  }
+  .agree-check input{ width:16px; height:16px; accent-color:var(--blue); cursor:pointer; }
+  .policy-item:has(.agree-check input:checked){ border-color:var(--blue); }
+
+  .agree-all{
+    display:flex; align-items:center; gap:8px;
+    font-size:13.5px; font-weight:700; color:var(--graphite);
+    padding:12px 16px; background:#EAF1F8;
+    border:1px solid var(--blue); border-radius:3px;
+    margin-bottom:16px; cursor:pointer;
+  }
+  .agree-all input{ width:17px; height:17px; accent-color:var(--blue); cursor:pointer; }
+
+  /* ===== 입력 폼 ===== */
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px 14px; }
+  .field{ display:flex; flex-direction:column; gap:6px; }
+  .field.full{ grid-column:1 / -1; }
+
+  label{ font-size:12.5px; font-weight:600; color:var(--steel); }
+  label .req{ color:var(--amber); margin-left:2px; }
+  label .opt{ color:var(--steel-light); font-weight:400; margin-left:2px; }
+
+  input, select{
+    font-family:'Pretendard Variable', sans-serif;
+    font-size:14.5px;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--paper);
+    color:var(--graphite);
+    outline:none;
+    transition:border-color .15s ease, background .15s ease;
+    width:100%;
+  }
+  input:focus, select:focus{ border-color:var(--blue); background:var(--panel); }
+  input::placeholder{ color:#A8B0B6; }
+
+  .radio-row{ display:flex; gap:10px; }
+  .radio-card{
+    flex:1; border:1px solid var(--line); border-radius:3px;
+    padding:11px 12px; cursor:pointer; font-size:13.5px;
+    display:flex; align-items:center; gap:8px;
+    background:var(--paper); transition:border-color .15s ease, background .15s ease;
+  }
+  .radio-card input{ width:auto; accent-color:var(--blue); }
+  .radio-card:has(input:checked){ border-color:var(--blue); background:#EAF1F8; }
+  .radio-card.security:has(input:checked){ border-color:var(--amber); background:#FBF1E4; }
+
+  .submit-row{
+    margin-top:30px; display:flex; align-items:center;
+    justify-content:space-between; gap:16px;
+  }
+  .submit-note{ font-size:11.5px; color:var(--steel-light); line-height:1.5; }
+  button.submit-main{
+    font-family:'Pretendard Variable', sans-serif;
+    font-weight:600; font-size:14.5px; color:#fff;
+    background:var(--blue); border:none; border-radius:3px;
+    padding:13px 26px; cursor:pointer; white-space:nowrap;
+    transition:background .15s ease;
+  }
+  button.submit-main:hover{ background:var(--blue-dim); }
+  button.submit-main:disabled{ background:var(--steel-light); cursor:not-allowed; }
+
+  .status{
+    margin-top:16px; padding:12px 14px; border-radius:3px;
+    font-size:13px; display:none; font-family:'IBM Plex Mono', monospace;
+  }
+  .status.show{ display:block; }
+  .status.ok{ background:#E8F3EC; color:var(--ok); border:1px solid #B9DFC7; }
+  .status.err{ background:#FBEAEA; color:var(--err); border:1px solid #F0C1BC; }
+
+  @media (max-width:520px){
+    .grid{ grid-template-columns:1fr; }
+    .head{ flex-direction:column; }
+    .head-right{ text-align:left; }
+    .submit-row{ flex-direction:column; align-items:stretch; }
+  }
+</style>
+<meta content="Request a site visit to HYUN SUNG Co., Ltd. in Gimhae, Gyeongnam, Korea." name="description"/>
+<link href="https://www.hskiup.co.kr/en/visit.html" rel="canonical"/>
+<link href="https://www.hskiup.co.kr/visit.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.hskiup.co.kr/en/visit.html" hreflang="en" rel="alternate"/>
+<link href="https://www.hskiup.co.kr/visit.html" hreflang="x-default" rel="alternate"/>
+</head>
+<body>
+<div class="sheet">
+<div class="head">
+<div class="head-left">
+<p class="eyebrow">Hyunsung Enterprise · Visitor Access</p>
+<h1>Site Visit Reservation Request</h1>
+</div>
+<div class="head-right">
+      FORM <span class="doc-id">VR-01</span><br/>
+      Gimhae, Gyeongnam
+    <br/><a href="/visit.html" hreflang="ko" lang="ko" style="color:var(--blue)">한국어</a> · <a href="/en/" style="color:var(--blue)">Home</a></div>
+</div>
+<form class="body-pad" id="visitForm">
+<p class="section-label" style="margin-top:0;">01 — Terms &amp; Pledge</p>
+<p style="font-size:11.5px;color:var(--steel-light);margin:0 0 12px;line-height:1.6">The English text below is a courtesy translation. If there is any difference, the Korean version applies.</p><label class="agree-all">
+<input id="agreeAll" type="checkbox"/>
+      I agree to all 3 items below
+    </label>
+<details class="policy-item">
+<summary>Privacy Policy <span class="chev">▾</span></summary>
+<div class="policy-text">
+<p><strong>Items collected</strong> Name, date of birth, phone number, affiliation (company name), email, purpose of visit, date and time of visit, host name, access type (optional: vehicle number)</p>
+<p><strong>Purpose of collection</strong> Registering site access, issuing visitor passes, and notifying visitors of approval and confirmation</p>
+<p><strong>Retention period</strong> Kept for 1 year from the date of collection and then destroyed (kept for the required period where a statutory retention obligation applies)</p>
+<p><strong>Provision to third parties</strong> As a rule, your information is not provided to third parties; it may be provided only where required by law or upon a lawful request from an investigative agency.</p>
+<p>You have the right to refuse consent to the collection and use of your personal information; if you refuse, use of the visit reservation service may be restricted.</p>
+</div>
+<label class="agree-check"><input class="policy-check" type="checkbox"/> I agree to the Privacy Policy above.</label>
+</details>
+<details class="policy-item">
+<summary>Visit Request Terms <span class="chev">▾</span></summary>
+<div class="policy-text">
+<p><strong>Article 1 (Purpose)</strong> These terms set out the matters necessary for visitors using the visit reservation service to visit the premises of Hyun Sung Co., Ltd. (the "Company").</p>
+<p><strong>Article 2 (Reservation Request)</strong> Visitors must enter accurate information such as purpose, date and time of the visit and host; access may be restricted if false information is entered.</p>
+<p><strong>Article 3 (Access Procedure)</strong> Visitors whose reservation has been approved must contact their host on the day of the visit and collect a visitor pass.</p>
+<p><strong>Article 4 (Access Restrictions)</strong> The Company may restrict access without prior notice where required for security reasons or where there is a problem with the request.</p>
+<p><strong>Article 5 (Responsibility)</strong> Safety accidents and the like occurring during a visit are handled in accordance with applicable laws and the Company’s internal rules.</p>
+</div>
+<label class="agree-check"><input class="policy-check" type="checkbox"/> I agree to the Visit Request Terms above.</label>
+</details>
+<details class="policy-item">
+<summary>Safety Rules Pledge <span class="chev">▾</span></summary>
+<div class="policy-text">
+<p>I pledge to follow the following safety rules during my visit to the premises of Hyun Sung Co., Ltd.</p>
+<p><strong>1.</strong> I will wear the protective equipment designated by the Company (hard hat, safety shoes, etc.) when entering production lines and work areas.</p>
+<p><strong>2.</strong> I will not enter production lines or security areas alone, without being accompanied or guided by my host.</p>
+<p><strong>3.</strong> I will keep to the designated walkways and safety lines and watch out for equipment and vehicles in operation.</p>
+<p><strong>4.</strong> Photography on the premises and removal of drawings or materials are allowed only with prior approval.</p>
+<p><strong>5.</strong> In an emergency such as a fire or accident, I will follow the Company’s instructions and evacuation orders.</p>
+</div>
+<label class="agree-check"><input class="policy-check" type="checkbox"/> I agree to the Safety Rules Pledge above.</label>
+</details>
+<p class="section-label">02 — Visitor Information</p>
+<div class="grid">
+<div class="field">
+<label>Visitor name<span class="req">*</span></label>
+<input name="visitorName" placeholder="Your full name" required="" type="text"/>
+</div>
+<div class="field">
+<label>Date of birth<span class="req">*</span></label>
+<input name="birthDate" required="" type="date"/>
+</div>
+<div class="field">
+<label>Company / affiliation<span class="req">*</span></label>
+<input name="company" placeholder="Your company" required="" type="text"/>
+</div>
+<div class="field">
+<label>Phone<span class="req">*</span></label>
+<input name="phone" placeholder="010-0000-0000" required="" type="tel"/>
+</div>
+<div class="field full">
+<label>Email<span class="req">*</span></label>
+<input name="email" placeholder="you@company.com" required="" type="email"/>
+</div>
+</div>
+<p class="section-label">03 — Visit Schedule</p>
+<div class="grid">
+<div class="field">
+<label>Preferred date<span class="req">*</span></label>
+<input name="visitDate" required="" type="date"/>
+</div>
+<div class="field">
+<label>Preferred time<span class="req">*</span></label>
+<input name="visitTime" required="" type="time"/>
+</div>
+<div class="field full">
+<label>Purpose of visit<span class="req">*</span></label>
+<input name="purpose" placeholder="e.g., supply discussion, facility tour, quality audit" required="" type="text"/>
+</div>
+<div class="field full">
+<label>Host (person to be visited)<span class="req">*</span></label>
+<input name="hostName" placeholder="e.g., Sales Team, Gil-dong Hong" required="" type="text"/>
+</div>
+</div>
+<p class="section-label">04 — Vehicle Information <span class="opt">(optional)</span></p>
+<div class="grid">
+<div class="field full">
+<label>Vehicle number<span class="opt">(optional)</span></label>
+<input name="vehicleNumber" placeholder="e.g., 12GA 3456" type="text"/>
+</div>
+</div>
+<p class="section-label">05 — Access Type</p>
+<div class="field full">
+<div class="radio-row">
+<label class="radio-card">
+<input checked="" name="securityArea" type="radio" value="일반"/>
+          General visit
+        </label>
+<label class="radio-card security">
+<input name="securityArea" type="radio" value="보안구역"/>
+          Security area access (production lines · viewing drawings)
+        </label>
+</div>
+</div>
+<div class="submit-row">
+<p class="submit-note">After you submit, a confirmation email is sent once the Information Security Manager (or the department head and host) has approved the request.</p>
+<p class="submit-note">Please visit only after you receive the approval confirmation email. ※ Information Security Manager: +82-10-2918-8897 (Deputy General Manager Doun Lee)</p>
+<button class="submit-main" id="submitBtn" type="submit">Submit request</button>
+</div>
+<div class="status" id="statusBox"></div>
+</form>
+</div>
+<script>
+const ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbxE0DGSyv8JBgXQ7Ffq9B8ns1Otf9WabB-IbWcwVgNYYk53P2pWUsIbJCmFd7tzi4y2VA/exec";
+
+const policyChecks = document.querySelectorAll('.policy-check');
+const agreeAll = document.getElementById('agreeAll');
+
+agreeAll.addEventListener('change', function(){
+  policyChecks.forEach(c => c.checked = agreeAll.checked);
+});
+policyChecks.forEach(c => c.addEventListener('change', function(){
+  agreeAll.checked = Array.from(policyChecks).every(x => x.checked);
+}));
+
+const form = document.getElementById('visitForm');
+const btn = document.getElementById('submitBtn');
+const statusBox = document.getElementById('statusBox');
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  statusBox.className = "status";
+
+  const allAgreed = Array.from(policyChecks).every(c => c.checked);
+  if (!allAgreed) {
+    statusBox.textContent = "You must agree to all 3 items before you can submit.";
+    statusBox.classList.add('show','err');
+    document.querySelector('.policy-item').scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  const formData = new FormData(form);
+
+  try{
+    await fetch(ENDPOINT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
+    statusBox.textContent = "Request received — once your host approves it, we will send a confirmation by email.";
+    statusBox.classList.add('show','ok');
+    form.reset();
+  }catch(err){
+    statusBox.textContent = "An error occurred while sending. Please try again.";
+    statusBox.classList.add('show','err');
+  }finally{
+    btn.disabled = false;
+    btn.textContent = "Submit request";
+  }
+});
+</script>
+</body>
+</html>

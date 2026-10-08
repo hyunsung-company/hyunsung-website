@@ -71,3 +71,8 @@
 
 /* English header: keep the logo on the left so it never meets the KO chip / menu button */
 @media (max-width:900px){ header.en-site .header-inner{justify-content:flex-start !important} header.en-site .logo{margin-left:0 !important} }
+
+/* goal banner (safety page): wrap instead of widening the page on phones */
+@media (max-width:900px){
+  div[style*="justify-content:space-around"]{flex-wrap:wrap;gap:24px;padding:28px 20px !important}
+}
