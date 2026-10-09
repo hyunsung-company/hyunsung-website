@@ -76,3 +76,17 @@
 @media (max-width:900px){
   div[style*="justify-content:space-around"]{flex-wrap:wrap;gap:24px;padding:28px 20px !important}
 }
+
+/* ===== 모바일 보정 (한글/영문 공통) ===== */
+@media (max-width:900px){
+  /* 찾아오시는길: 진례 아래에 함안 */
+  .location-grid{grid-template-columns:1fr !important;gap:24px !important}
+  .factory-info,.factory-info *{min-width:0}
+  /* 인사말: 사진 위, 글 아래 */
+  div[style*="grid-template-columns:1fr 2fr"]{grid-template-columns:1fr !important;gap:24px !important}
+  #ceo-img{max-width:300px;margin:0 auto}
+  #ceo-img img{height:auto !important;max-height:380px}
+  /* 사업장/공통 표: 글자칸은 좁게, 내용칸은 넓게 */
+  .info-table th{width:84px !important;white-space:nowrap;padding:12px 10px !important;font-size:13px}
+  .info-table td{padding:12px 12px !important;font-size:14px;word-break:keep-all}
+}
