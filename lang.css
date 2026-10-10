@@ -116,3 +116,16 @@ html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
   #main-hero .slide{background-size:auto 72% !important;background-position:center top !important;background-repeat:no-repeat;
     -webkit-mask-image:linear-gradient(to bottom,#000 58%,transparent 76%);mask-image:linear-gradient(to bottom,#000 58%,transparent 76%)}
 }
+
+/* ===== 사진 잘림 보정 3 (휴대폰) ===== */
+@media (max-width:900px){
+  /* 방산부품: 그림 맨 윗부분이 잘리지 않게 */
+  div[style*="aspect-ratio: 16/10"] img{margin-top:0 !important}
+  /* 첫 화면 '주요 사업 분야' 카드 사진: 전체가 보이게 */
+  .card-thumb{height:210px !important;background:#fff !important}
+  .card-thumb img{width:100% !important;height:100% !important;object-fit:contain !important;object-position:center !important}
+}
+
+/* ===== 사업 분야 카드 사진: 컴퓨터/휴대폰 모두 잘리지 않게 ===== */
+a.card .card-thumb{height:240px !important;background:#fff !important}
+a.card .card-thumb img{width:100% !important;height:100% !important;object-fit:contain !important;object-position:center !important}
