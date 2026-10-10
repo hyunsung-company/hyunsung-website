@@ -23,3 +23,6 @@
   function close(){m.classList.remove('open');ov.style.display='none';document.body.style.overflow=''}
   b.addEventListener('click',open); ov.addEventListener('click',close); m.querySelector('.mm-close').addEventListener('click',close);
 })();
+
+/* 인사말 사진 아래 빈 회색 칸 제거 (모바일) */
+(function(){var st=document.createElement('style');st.textContent='@media (max-width:900px){#ceo-img{height:auto !important;background:none !important;max-width:320px;margin:0 auto}#ceo-img img{height:auto !important;max-height:none !important;width:100% !important;object-fit:contain !important}}';document.head.appendChild(st)})();
