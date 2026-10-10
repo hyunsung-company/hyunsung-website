@@ -118,8 +118,8 @@ html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
 }
 
 /* ===== 사업 분야 카드 사진: 컴퓨터/휴대폰 모두 잘리지 않게 ===== */
-.home-biz a.card .card-thumb{height:240px !important;background:#fff !important}
-.home-biz a.card .card-thumb img{width:100% !important;height:100% !important;object-fit:contain !important;object-position:center !important}
+.home-biz a.card .card-thumb{height:240px !important}
+.home-biz a.card .card-thumb img{width:100% !important;height:100% !important;object-fit:cover !important;object-position:center !important}
 
 /* ===== 휴대폰 상단: 현성기업 로고를 모든 페이지에서 왼쪽 정렬 (첫 페이지와 동일) ===== */
 @media (max-width:900px){
@@ -127,5 +127,7 @@ html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
   header .logo{margin-left:0 !important}
 }
 
-/* 윤리경영 카드: 다른 카드처럼 사진 위에 글자 표시 */
-.thumb-label{position:absolute;left:0;right:0;bottom:14%;text-align:center;color:#fff;font-weight:700;font-size:26px;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,.65);pointer-events:none;font-family:'Noto Sans KR',sans-serif}
+
+/* 지속가능경영 카드: 6장 같은 크기, 사진 아래쪽 글자 부분은 보이지 않게 위쪽 기준으로 자름 */
+.sus-cards a.card .card-thumb{height:200px !important}
+.sus-cards a.card .card-thumb img{width:100% !important;height:100% !important;object-fit:cover !important;object-position:center 20% !important}
