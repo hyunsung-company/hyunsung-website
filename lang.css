@@ -131,3 +131,6 @@ html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
 /* 지속가능경영 카드: 6장 같은 크기, 사진 아래쪽 글자 부분은 보이지 않게 위쪽 기준으로 자름 */
 .sus-cards a.card .card-thumb{height:200px !important}
 .sus-cards a.card .card-thumb img{width:100% !important;height:100% !important;object-fit:cover !important;object-position:center 20% !important}
+
+/* 안전/보건경영 카드: 다른 안전 사진 사용, 위쪽 제목 글자는 안 보이게 아래쪽 기준 */
+.sus-cards a.card[href$="safety.html"] .card-thumb img{object-position:center 88% !important}
