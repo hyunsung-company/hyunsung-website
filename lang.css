@@ -134,3 +134,5 @@ html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
 
 /* 안전/보건경영 카드: 다른 안전 사진 사용, 위쪽 제목 글자는 안 보이게 아래쪽 기준 */
 .sus-cards a.card[href$="safety.html"] .card-thumb img{object-position:center 88% !important}
+.sus-cards a.card[href$="safety.html"] .card-thumb{overflow:hidden !important}
+.sus-cards a.card[href$="safety.html"] .card-thumb img{transform:scale(1.35);transform-origin:50% 100%}
