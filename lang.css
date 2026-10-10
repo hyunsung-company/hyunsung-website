@@ -85,9 +85,27 @@
   /* 인사말: 사진 위, 글 아래 */
   div[style*="grid-template-columns:1fr 2fr"]{grid-template-columns:1fr !important;gap:24px !important}
   #ceo-img{max-width:300px;margin:0 auto}
-  #ceo-img{height:auto !important;background:none !important}
+  #ceo-img{height:auto !important;min-height:0 !important;background:none !important}
   #ceo-img img{height:auto !important;max-height:none !important;width:100% !important;object-fit:contain !important}
   /* 사업장/공통 표: 글자칸은 좁게, 내용칸은 넓게 */
   .info-table th{width:84px !important;white-space:nowrap;padding:12px 10px !important;font-size:13px}
   .info-table td{padding:12px 12px !important;font-size:14px;word-break:keep-all}
 }
+
+/* ===== 모바일 보정 2 ===== */
+@media (max-width:900px){
+  /* 배너 그림: 글자가 잘리지 않게 전체 표시 */
+  img[alt$="배너"],img[alt="ESG경영"],img[alt$="banner"],img[alt="ESG Management"]{height:auto !important;object-fit:contain !important;max-height:none !important}
+  /* 방산부품 카드: 그림 아래쪽이 잘리지 않게 */
+  div[style*="aspect-ratio: 16/10"]{aspect-ratio:auto !important}
+  /* 사이버신문고 절차 4칸: 2x2로 */
+  .cyber-flow{display:grid !important;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 !important}
+  .cyber-arrow{display:none !important}
+  .cyber-step{min-width:0 !important;padding:16px 8px !important;border-radius:6px;font-size:14px !important}
+  .cyber-flow{counter-reset:cs}
+  .cyber-step::before{counter-increment:cs;content:counter(cs) "단계";display:block;font-size:11px;color:#e8601c;margin-bottom:4px;letter-spacing:1px}
+  /* 제보 신청 라벨 */
+  div[style*="background:var(--navy);color:white;padding:8px 20px"]{white-space:nowrap;flex-shrink:0}
+  div[style*="align-items:center;gap:12px;margin-bottom:24px"]{flex-wrap:wrap}
+}
+html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
