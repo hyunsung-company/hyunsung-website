@@ -113,8 +113,8 @@ html[lang="en"] .cyber-step::before{content:"Step " counter(cs)}
 /* ===== 첫 화면 슬라이드 사진: 휴대폰에서 너무 크게 잘리지 않게 줄임 ===== */
 @media (max-width:900px){
   #main-hero{background-color:#0a1628}
-  #main-hero .slide{background-size:auto 72% !important;background-position:center top !important;background-repeat:no-repeat;
-    -webkit-mask-image:linear-gradient(to bottom,#000 58%,transparent 76%);mask-image:linear-gradient(to bottom,#000 58%,transparent 76%)}
+  #main-hero .slide{background-size:contain !important;background-position:center top !important;background-repeat:no-repeat;
+    -webkit-mask-image:linear-gradient(to bottom,#000 38%,transparent 58%);mask-image:linear-gradient(to bottom,#000 38%,transparent 58%)}
 }
 
 /* ===== 사진 잘림 보정 3 (휴대폰) ===== */
